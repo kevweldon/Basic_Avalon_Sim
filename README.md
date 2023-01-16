@@ -1,4 +1,4 @@
-This exmaple demonstrates the basic usage of the Avalon Bus Functional Model(BFM).
+Platform Designer example demonstrating Avalon communication from Avalon BFM to on-chip RAM.
 
 To run the simulation on Linux navigate to the ./simulation directory and execute the "runme" script.
 
