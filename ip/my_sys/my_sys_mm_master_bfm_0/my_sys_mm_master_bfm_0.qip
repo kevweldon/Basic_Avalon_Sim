@@ -1,0 +1,43 @@
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_VERSION "22.4"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_avalon_mm_master_bfm"
+set_global_assignment -library "my_sys_mm_master_bfm_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "my_sys_mm_master_bfm_0.sopcinfo"]
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name SLD_INFO "QSYS_NAME my_sys_mm_master_bfm_0 HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "my_sys_mm_master_bfm_0" -name MISC_FILE [file join $::quartus(qip_path) "my_sys_mm_master_bfm_0.cmp"]
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "my_sys_mm_master_bfm_0" -name MISC_FILE [file join $::quartus(qip_path) "../my_sys_mm_master_bfm_0.ip"]
+
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_NAME "YWx0ZXJhX2F2YWxvbl9tbV9tYXN0ZXJfYmZt"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_DISPLAY_NAME "QXZhbG9uIE1lbW9yeSBNYXBwZWQgTWFzdGVyIEJGTSBJbnRlbCBGUEdBIElQ"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_VERSION "MTkuMQ=="
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_DESCRIPTION "SW50ZWwgRlBHQSBBdmFsb24gTWVtb3J5IE1hcHBlZCBNYXN0ZXIgQkZN"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL1NpbXVsYXRpb247IERlYnVnIGFuZCBWZXJpZmljYXRpb24vU2ltdWxhdGlvbg=="
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL25pazE0MTI0NzE5MzI1ODEuaHRtbA=="
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL2hjbzE0MDY1NjMzNjE5MjYuaHRtbCNld2ExNDQ4NjQ4Njc5Nzg1"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_NAME "bXlfc3lzX21tX21hc3Rlcl9iZm1fMA=="
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "altera_avalon_mm_master_bfm_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_mm_master_bfm_191/synth/verbosity_pkg.sv"]
+set_global_assignment -library "altera_avalon_mm_master_bfm_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_mm_master_bfm_191/synth/avalon_mm_pkg.sv"]
+set_global_assignment -library "altera_avalon_mm_master_bfm_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_mm_master_bfm_191/synth/avalon_utilities_pkg.sv"]
+set_global_assignment -library "altera_avalon_mm_master_bfm_191" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_avalon_mm_master_bfm_191/synth/altera_avalon_mm_master_bfm.sv"]
+set_global_assignment -library "my_sys_mm_master_bfm_0" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/my_sys_mm_master_bfm_0.v"]
+
+
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_TOOL_NAME "altera_avalon_mm_master_bfm"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_TOOL_VERSION "19.1"
+set_global_assignment -entity "altera_avalon_mm_master_bfm" -library "altera_avalon_mm_master_bfm_191" -name IP_TOOL_ENV "QsysPrimePro"
+

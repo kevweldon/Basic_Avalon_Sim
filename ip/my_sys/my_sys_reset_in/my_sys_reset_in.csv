@@ -1,0 +1,16 @@
+# system info my_sys_reset_in on 2023.01.15.17:40:16
+system_info:
+name,value
+DEVICE,AGFB014R24A3E3VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for my_sys_reset_in on 2023.01.15.17:40:16
+files:
+filepath,kind,attributes,module,is_top
+sim/my_sys_reset_in.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_reset_in,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module

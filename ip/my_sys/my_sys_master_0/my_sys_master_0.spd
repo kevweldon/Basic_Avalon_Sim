@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_jtag_interface.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_jtag_dc_streaming.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_jtag_sld_node.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_jtag_streaming.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_clock_crosser.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_std_synchronizer_nocut.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_pipeline_base.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_idle_remover.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_idle_inserter.v"
+   type="VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_pipeline_stage.sv"
+   type="SYSTEM_VERILOG"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="altera_jtag_dc_streaming_191/sim/altera_avalon_st_jtag_interface.sdc"
+   type="SDC_ENTITY"
+   library="altera_jtag_dc_streaming_191" />
+ <file
+   path="timing_adapter_1930/sim/my_sys_master_0_timing_adapter_1930_zznpvoa.sv"
+   type="SYSTEM_VERILOG"
+   library="timing_adapter_1930" />
+ <file
+   path="altera_avalon_sc_fifo_1931/sim/my_sys_master_0_altera_avalon_sc_fifo_1931_fzgstwy.v"
+   type="VERILOG"
+   library="altera_avalon_sc_fifo_1931" />
+ <file
+   path="altera_avalon_st_bytes_to_packets_1920/sim/altera_avalon_st_bytes_to_packets.v"
+   type="VERILOG"
+   library="altera_avalon_st_bytes_to_packets_1920" />
+ <file
+   path="altera_avalon_st_packets_to_bytes_1920/sim/altera_avalon_st_packets_to_bytes.v"
+   type="VERILOG"
+   library="altera_avalon_st_packets_to_bytes_1920" />
+ <file
+   path="altera_avalon_packets_to_master_1920/sim/altera_avalon_packets_to_master.v"
+   type="VERILOG"
+   library="altera_avalon_packets_to_master_1920" />
+ <file
+   path="channel_adapter_1921/sim/my_sys_master_0_channel_adapter_1921_5wnzrci.sv"
+   type="SYSTEM_VERILOG"
+   library="channel_adapter_1921" />
+ <file
+   path="channel_adapter_1921/sim/my_sys_master_0_channel_adapter_1921_fkajlia.sv"
+   type="SYSTEM_VERILOG"
+   library="channel_adapter_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_synchronizer.v"
+   type="VERILOG"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_reset_controller_1921/sim/altera_reset_controller.sdc"
+   type="SDC_ENTITY"
+   library="altera_reset_controller_1921" />
+ <file
+   path="altera_jtag_avalon_master_191/sim/my_sys_master_0_altera_jtag_avalon_master_191_3zppvky.v"
+   type="VERILOG"
+   library="altera_jtag_avalon_master_191"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/my_sys_master_0.v"
+   type="VERILOG"
+   library="my_sys_master_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_master_0.my_sys_master_0" />
+ <deviceFamily name="agilex" />
+ <device name="AGFB014R24A3E3VR0" />
+</simPackage>

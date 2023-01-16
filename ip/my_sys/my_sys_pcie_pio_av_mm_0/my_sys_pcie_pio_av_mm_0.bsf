@@ -1,0 +1,221 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 568 520)
+	(text "my_sys_pcie_pio_av_mm_0" (rect 182 -1 304 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 504 20 516)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "pcie_clk" (rect 0 0 31 12)(font "Dialog" (font_size 9)))
+		(text "pcie_clk" (rect 4 72 52 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "pcie_rst" (rect 0 0 31 12)(font "Dialog" (font_size 9)))
+		(text "pcie_rst" (rect 4 128 52 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 136)
+		(input)
+		(text "avalon_slave_readdatavalid" (rect 0 0 110 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_readdatavalid" (rect 408 128 564 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 224)
+		(input)
+		(text "avalon_slave_waitrequest" (rect 0 0 102 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_waitrequest" (rect 417 212 561 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 304)
+		(input)
+		(text "avalon_slave_readdata[511..0]" (rect 0 0 120 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_readdata[511..0]" (rect 397 296 571 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 248)
+		(input)
+		(text "avalon_master_address[63..0]" (rect 0 0 122 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_address[63..0]" (rect 4 240 172 253)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "avalon_master_read" (rect 0 0 83 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_read" (rect 4 268 112 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "avalon_master_write" (rect 0 0 83 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_write" (rect 4 324 118 337)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 360)
+		(input)
+		(text "avalon_master_writedata[511..0]" (rect 0 0 127 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_writedata[511..0]" (rect 4 352 190 365)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 416)
+		(input)
+		(text "avalon_master_byteenable[63..0]" (rect 0 0 133 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_byteenable[63..0]" (rect 4 408 190 421)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 448)
+		(input)
+		(text "avalon_master_burstcount[3..0]" (rect 0 0 127 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_burstcount[3..0]" (rect 4 436 184 449)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 80)
+		(output)
+		(text "avalon_slave_address[63..0]" (rect 0 0 115 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_address[63..0]" (rect 404 72 566 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 112)
+		(output)
+		(text "avalon_slave_read" (rect 0 0 76 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_read" (rect 459 100 561 113)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 168)
+		(output)
+		(text "avalon_slave_write" (rect 0 0 76 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_write" (rect 456 156 564 169)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 192)
+		(output)
+		(text "avalon_slave_writedata[511..0]" (rect 0 0 120 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_writedata[511..0]" (rect 394 184 574 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 248)
+		(output)
+		(text "avalon_slave_byteenable[63..0]" (rect 0 0 126 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_byteenable[63..0]" (rect 389 240 569 253)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 568 280)
+		(output)
+		(text "avalon_slave_burstcount[3..0]" (rect 0 0 120 12)(font "Dialog" (font_size 9)))
+		(text "avalon_slave_burstcount[3..0]" (rect 397 268 571 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "reset_sink_reset" (rect 0 0 67 12)(font "Dialog" (font_size 9)))
+		(text "reset_sink_reset" (rect 4 184 100 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "avalon_master_readdatavalid" (rect 0 0 118 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_readdatavalid" (rect 4 296 166 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 392)
+		(output)
+		(text "avalon_master_waitrequest" (rect 0 0 109 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_waitrequest" (rect 4 380 154 393)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 472)
+		(output)
+		(text "avalon_master_readdata[511..0]" (rect 0 0 127 12)(font "Dialog" (font_size 9)))
+		(text "avalon_master_readdata[511..0]" (rect 4 464 184 477)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "clock_sink" (rect 147 52 354 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 214 80 446 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset_sink" (rect 148 108 356 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 214 136 458 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "avalon_master" (rect 362 52 802 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "address" (rect 318 80 678 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "read" (rect 336 108 696 227)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdatavalid" (rect 293 136 664 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 333 164 696 339)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 312 192 678 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "waitrequest" (rect 300 220 666 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "byteenable" (rect 305 248 670 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "burstcount" (rect 306 276 672 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 315 304 678 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "reset_sink1" (rect 143 164 352 342)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 214 192 458 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "avalon_master1" (rect 119 220 322 454)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "address" (rect 214 248 470 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "read" (rect 214 276 452 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdatavalid" (rect 214 304 506 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 214 332 458 675)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 214 360 482 731)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "waitrequest" (rect 214 388 494 787)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "byteenable" (rect 214 416 488 843)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "burstcount" (rect 214 444 488 899)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 214 472 476 955)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " my_sys_pcie_pio_av_mm_0 " (rect 425 506 1000 1023)(font "Dialog" (font_size 8)))
+		(line (pt 209 38)(pt 361 38)(line_width 1))
+		(line (pt 361 38)(pt 361 505)(line_width 1))
+		(line (pt 209 505)(pt 361 505)(line_width 1))
+		(line (pt 209 38)(pt 209 505)(line_width 1))
+		(line (pt 0 85)(pt 209 85)(line_width 1))
+		(line (pt 210 62)(pt 210 89)(line_width 1))
+		(line (pt 211 62)(pt 211 89)(line_width 1))
+		(line (pt 0 141)(pt 209 141)(line_width 1))
+		(line (pt 210 118)(pt 210 145)(line_width 1))
+		(line (pt 211 118)(pt 211 145)(line_width 1))
+		(line (pt 570 85)(pt 361 85)(line_width 3))
+		(line (pt 570 113)(pt 361 113)(line_width 1))
+		(line (pt 570 141)(pt 361 141)(line_width 1))
+		(line (pt 570 169)(pt 361 169)(line_width 1))
+		(line (pt 570 197)(pt 361 197)(line_width 3))
+		(line (pt 570 225)(pt 361 225)(line_width 1))
+		(line (pt 570 253)(pt 361 253)(line_width 3))
+		(line (pt 570 281)(pt 361 281)(line_width 3))
+		(line (pt 570 309)(pt 361 309)(line_width 3))
+		(line (pt 360 62)(pt 360 313)(line_width 1))
+		(line (pt 359 62)(pt 359 313)(line_width 1))
+		(line (pt 0 197)(pt 209 197)(line_width 1))
+		(line (pt 210 174)(pt 210 201)(line_width 1))
+		(line (pt 211 174)(pt 211 201)(line_width 1))
+		(line (pt 0 253)(pt 209 253)(line_width 3))
+		(line (pt 0 281)(pt 209 281)(line_width 1))
+		(line (pt 0 309)(pt 209 309)(line_width 1))
+		(line (pt 0 337)(pt 209 337)(line_width 1))
+		(line (pt 0 365)(pt 209 365)(line_width 3))
+		(line (pt 0 393)(pt 209 393)(line_width 1))
+		(line (pt 0 421)(pt 209 421)(line_width 3))
+		(line (pt 0 449)(pt 209 449)(line_width 3))
+		(line (pt 0 477)(pt 209 477)(line_width 3))
+		(line (pt 210 230)(pt 210 481)(line_width 1))
+		(line (pt 211 230)(pt 211 481)(line_width 1))
+		(line (pt 0 0)(pt 570 0)(line_width 1))
+		(line (pt 570 0)(pt 570 524)(line_width 1))
+		(line (pt 0 524)(pt 570 524)(line_width 1))
+		(line (pt 0 0)(pt 0 524)(line_width 1))
+	)
+)

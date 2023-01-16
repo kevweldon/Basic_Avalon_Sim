@@ -1,0 +1,138 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 376 384)
+	(text "my_sys_master_0" (rect 124 -1 204 11)(font "Dialog" (font_size 12)))
+	(text "inst" (rect 8 368 20 380)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Dialog" (font_size 9)))
+		(text "clk_clk" (rect 4 72 46 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "clk_reset_reset" (rect 0 0 62 12)(font "Dialog" (font_size 9)))
+		(text "clk_reset_reset" (rect 4 128 94 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 168)
+		(input)
+		(text "master_readdata[31..0]" (rect 0 0 92 12)(font "Dialog" (font_size 9)))
+		(text "master_readdata[31..0]" (rect 246 156 378 169)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 280)
+		(input)
+		(text "master_waitrequest" (rect 0 0 77 12)(font "Dialog" (font_size 9)))
+		(text "master_waitrequest" (rect 261 268 369 281)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 304)
+		(input)
+		(text "master_readdatavalid" (rect 0 0 86 12)(font "Dialog" (font_size 9)))
+		(text "master_readdatavalid" (rect 252 296 372 309)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 80)
+		(output)
+		(text "master_reset_reset" (rect 0 0 80 12)(font "Dialog" (font_size 9)))
+		(text "master_reset_reset" (rect 261 72 369 85)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 136)
+		(output)
+		(text "master_address[31..0]" (rect 0 0 89 12)(font "Dialog" (font_size 9)))
+		(text "master_address[31..0]" (rect 250 128 376 141)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 192)
+		(output)
+		(text "master_read" (rect 0 0 51 12)(font "Dialog" (font_size 9)))
+		(text "master_read" (rect 303 184 369 197)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 224)
+		(output)
+		(text "master_write" (rect 0 0 51 12)(font "Dialog" (font_size 9)))
+		(text "master_write" (rect 300 212 372 225)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 248)
+		(output)
+		(text "master_writedata[31..0]" (rect 0 0 92 12)(font "Dialog" (font_size 9)))
+		(text "master_writedata[31..0]" (rect 243 240 381 253)(font "Dialog" (font_size 9)))
+	)
+	(port
+		(pt 376 336)
+		(output)
+		(text "master_byteenable[3..0]" (rect 0 0 96 12)(font "Dialog" (font_size 9)))
+		(text "master_byteenable[3..0]" (rect 240 324 378 337)(font "Dialog" (font_size 9)))
+	)
+	(drawing
+		(text "clk" (rect 98 52 214 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "clk" (rect 119 80 256 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "clk_reset" (rect 60 108 174 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 119 136 268 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "master_reset" (rect 229 52 530 118)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "reset" (rect 200 80 430 171)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "master" (rect 229 108 494 230)(font "Dialog" (color 128 0 0)(font_size 10)))
+		(text "address" (rect 185 136 412 283)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdata" (rect 182 164 412 339)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "read" (rect 203 192 430 395)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "write" (rect 200 220 430 451)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "writedata" (rect 179 248 412 507)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "waitrequest" (rect 167 276 400 563)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "readdatavalid" (rect 160 304 398 619)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text "byteenable" (rect 172 332 404 675)(font "Dialog" (color 0 0 0)(font_size 8)))
+		(text " my_sys_master_0 " (rect 285 366 672 743)(font "Dialog" (font_size 8)))
+		(line (pt 114 38)(pt 228 38)(line_width 1))
+		(line (pt 228 38)(pt 228 365)(line_width 1))
+		(line (pt 114 365)(pt 228 365)(line_width 1))
+		(line (pt 114 38)(pt 114 365)(line_width 1))
+		(line (pt 0 85)(pt 114 85)(line_width 1))
+		(line (pt 115 62)(pt 115 89)(line_width 1))
+		(line (pt 116 62)(pt 116 89)(line_width 1))
+		(line (pt 0 141)(pt 114 141)(line_width 1))
+		(line (pt 115 118)(pt 115 145)(line_width 1))
+		(line (pt 116 118)(pt 116 145)(line_width 1))
+		(line (pt 380 85)(pt 228 85)(line_width 1))
+		(line (pt 227 62)(pt 227 89)(line_width 1))
+		(line (pt 226 62)(pt 226 89)(line_width 1))
+		(line (pt 380 141)(pt 228 141)(line_width 3))
+		(line (pt 380 169)(pt 228 169)(line_width 3))
+		(line (pt 380 197)(pt 228 197)(line_width 1))
+		(line (pt 380 225)(pt 228 225)(line_width 1))
+		(line (pt 380 253)(pt 228 253)(line_width 3))
+		(line (pt 380 281)(pt 228 281)(line_width 1))
+		(line (pt 380 309)(pt 228 309)(line_width 1))
+		(line (pt 380 337)(pt 228 337)(line_width 3))
+		(line (pt 227 118)(pt 227 341)(line_width 1))
+		(line (pt 226 118)(pt 226 341)(line_width 1))
+		(line (pt 0 0)(pt 380 0)(line_width 1))
+		(line (pt 380 0)(pt 380 384)(line_width 1))
+		(line (pt 0 384)(pt 380 384)(line_width 1))
+		(line (pt 0 0)(pt 0 384)(line_width 1))
+	)
+)

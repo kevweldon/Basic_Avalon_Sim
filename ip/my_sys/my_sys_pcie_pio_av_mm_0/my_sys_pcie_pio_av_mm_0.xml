@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2021.08.23.07:23:33"
+ outputDirectory="/nfs/sc/disks/swuser_work_kweldon/raytheon/rca2/jim_burst_issue/ip/my_sys/my_sys_pcie_pio_av_mm_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="AGFB014R24A3E3VR0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVALON_MASTER_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVALON_MASTER_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock_sink" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="pcie_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset_sink" kind="reset" start="0">
+   <property name="associatedClock" value="clock_sink" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="pcie_rst" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="avalon_master" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock_sink" />
+   <property name="associatedReset" value="reset_sink" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="true" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="8" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="avalon_slave_address"
+       direction="output"
+       role="address"
+       width="64" />
+   <port name="avalon_slave_read" direction="output" role="read" width="1" />
+   <port
+       name="avalon_slave_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+   <port name="avalon_slave_write" direction="output" role="write" width="1" />
+   <port
+       name="avalon_slave_writedata"
+       direction="output"
+       role="writedata"
+       width="512" />
+   <port
+       name="avalon_slave_waitrequest"
+       direction="input"
+       role="waitrequest"
+       width="1" />
+   <port
+       name="avalon_slave_byteenable"
+       direction="output"
+       role="byteenable"
+       width="64" />
+   <port
+       name="avalon_slave_burstcount"
+       direction="output"
+       role="burstcount"
+       width="4" />
+   <port
+       name="avalon_slave_readdata"
+       direction="input"
+       role="readdata"
+       width="512" />
+  </interface>
+  <interface name="reset_sink1" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="reset_sink_reset" direction="output" role="reset" width="1" />
+  </interface>
+  <interface name="avalon_master1" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port
+       name="avalon_master_address"
+       direction="input"
+       role="address"
+       width="64" />
+   <port name="avalon_master_read" direction="input" role="read" width="1" />
+   <port
+       name="avalon_master_readdatavalid"
+       direction="output"
+       role="readdatavalid"
+       width="1" />
+   <port name="avalon_master_write" direction="input" role="write" width="1" />
+   <port
+       name="avalon_master_writedata"
+       direction="input"
+       role="writedata"
+       width="512" />
+   <port
+       name="avalon_master_waitrequest"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+   <port
+       name="avalon_master_byteenable"
+       direction="input"
+       role="byteenable"
+       width="64" />
+   <port
+       name="avalon_master_burstcount"
+       direction="input"
+       role="burstcount"
+       width="4" />
+   <port
+       name="avalon_master_readdata"
+       direction="output"
+       role="readdata"
+       width="512" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="my_sys_pcie_pio_av_mm_0"
+   version="1.0"
+   name="my_sys_pcie_pio_av_mm_0">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24A3E3VR0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_SINK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_AVALON_MASTER_ADDRESS_WIDTH" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_AVALON_MASTER_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="3" />
+  <generatedFiles>
+   <file
+       path="/nfs/sc/disks/swuser_work_kweldon/raytheon/rca2/jim_burst_issue/ip/my_sys/my_sys_pcie_pio_av_mm_0/synth/my_sys_pcie_pio_av_mm_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/nfs/sc/disks/swuser_work_kweldon/raytheon/rca2/jim_burst_issue/ip/my_sys/my_sys_pcie_pio_av_mm_0/synth/my_sys_pcie_pio_av_mm_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/nfs/sc/disks/swuser_work_kweldon/raytheon/rca2/jim_burst_issue/ip/my_sys/my_sys_pcie_pio_av_mm_0.ip" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <messages>
+   <message level="Info" culprit="my_sys_pcie_pio_av_mm_0">"Generating: my_sys_pcie_pio_av_mm_0"</message>
+  </messages>
+ </entity>
+</deploy>

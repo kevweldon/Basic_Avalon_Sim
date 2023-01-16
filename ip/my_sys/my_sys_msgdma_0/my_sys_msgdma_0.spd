@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/dispatcher.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/descriptor_buffers.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/csr_block.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/response_block.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/fifo_with_byteenables.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/read_signal_breakout.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="modular_sgdma_dispatcher_1920/sim/write_signal_breakout.v"
+   type="VERILOG"
+   library="modular_sgdma_dispatcher_1920" />
+ <file
+   path="dma_read_master_1920/sim/read_master.v"
+   type="VERILOG"
+   library="dma_read_master_1920" />
+ <file
+   path="dma_read_master_1920/sim/MM_to_ST_Adapter.v"
+   type="VERILOG"
+   library="dma_read_master_1920" />
+ <file
+   path="dma_read_master_1920/sim/read_burst_control.v"
+   type="VERILOG"
+   library="dma_read_master_1920" />
+ <file
+   path="altera_msgdma_1922/sim/my_sys_msgdma_0_altera_msgdma_1922_yuyazqy.v"
+   type="VERILOG"
+   library="altera_msgdma_1922"
+   hasInlineConfiguration="true" />
+ <file
+   path="sim/my_sys_msgdma_0.v"
+   type="VERILOG"
+   library="my_sys_msgdma_0"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_msgdma_0.my_sys_msgdma_0" />
+ <deviceFamily name="agilex" />
+ <device name="AGFB014R24A3E3VR0" />
+</simPackage>

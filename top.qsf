@@ -1,0 +1,18 @@
+set_global_assignment -name TOP_LEVEL_ENTITY my_sys
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.2.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "05:49:27  AUGUST 23, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.4.0 Pro Edition"
+set_global_assignment -name FAMILY Agilex
+set_global_assignment -name DEVICE AGFB014R24A3E3VR0
+set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
+set_global_assignment -name FLOW_ENABLE_INTERACTIVE_TIMING_ANALYZER OFF
+set_global_assignment -name STA_AUTO_UPDATE_TIMING_NETLIST OFF
+set_global_assignment -name QSYS_FILE my_sys.qsys
+set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
+set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-12"
+set_global_assignment -name BOARD default
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_clock_in.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_mm_master_bfm_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_onchip_memory2_0.ip
+set_global_assignment -name IP_FILE ip/my_sys/my_sys_reset_in.ip

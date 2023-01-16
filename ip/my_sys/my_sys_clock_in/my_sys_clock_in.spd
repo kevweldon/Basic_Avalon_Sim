@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="sim/my_sys_clock_in.v"
+   type="VERILOG"
+   library="my_sys_clock_in"
+   hasInlineConfiguration="true" />
+ <topLevel name="my_sys_clock_in.my_sys_clock_in" />
+ <deviceFamily name="agilex" />
+ <device name="AGFB014R24A3E3VR0" />
+</simPackage>

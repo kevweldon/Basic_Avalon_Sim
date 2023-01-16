@@ -1,0 +1,30 @@
+# system info my_sys_msgdma_0 on 2022.11.10.05:58:19
+system_info:
+name,value
+DEVICE,AGFB014R24A3E3VR0
+DEVICE_FAMILY,Agilex
+GENERATION_ID,0
+#
+#
+# Files generated for my_sys_msgdma_0 on 2022.11.10.05:58:19
+files:
+filepath,kind,attributes,module,is_top
+sim/my_sys_msgdma_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_msgdma_0,true
+altera_msgdma_1922/sim/my_sys_msgdma_0_altera_msgdma_1922_yuyazqy.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_msgdma_0_altera_msgdma_1922_yuyazqy,false
+modular_sgdma_dispatcher_1920/sim/dispatcher.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/descriptor_buffers.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/csr_block.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/response_block.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/fifo_with_byteenables.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/read_signal_breakout.v,VERILOG,,dispatcher,false
+modular_sgdma_dispatcher_1920/sim/write_signal_breakout.v,VERILOG,,dispatcher,false
+dma_read_master_1920/sim/read_master.v,VERILOG,,read_master,false
+dma_read_master_1920/sim/MM_to_ST_Adapter.v,VERILOG,,read_master,false
+dma_read_master_1920/sim/read_burst_control.v,VERILOG,,read_master,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+my_sys_msgdma_0.msgdma_0,my_sys_msgdma_0_altera_msgdma_1922_yuyazqy
+my_sys_msgdma_0.msgdma_0.dispatcher_internal,dispatcher
+my_sys_msgdma_0.msgdma_0.read_mstr_internal,read_master
