@@ -4,8 +4,8 @@
  kind="my_sys_mm_master_bfm_0"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 22.4 94 (Future versions may contain additional information.) -->
- <!-- 2023.01.15.17:40:17 -->
+ <!-- Format version 23.1 115 (Future versions may contain additional information.) -->
+ <!-- 2023.05.03.13:41:41 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -27,7 +27,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -104,7 +104,7 @@
  </parameter>
  <parameter name="deviceFamily">
   <type>java.lang.String</type>
-  <value>Agilex</value>
+  <value>Agilex 7</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -156,7 +156,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_BURSTCOUNT_W">
    <type>int</type>
-   <value>4</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -420,7 +420,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_MAX_PENDING_READS">
    <type>int</type>
-   <value>4</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -436,7 +436,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_FIX_READ_LATENCY">
    <type>int</type>
-   <value>1</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -444,7 +444,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AV_READ_WAIT_TIME">
    <type>int</type>
-   <value>1</value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -514,7 +514,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clk" kind="clock_sink" version="22.4">
+  <interface name="clk" kind="clock_sink" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -559,7 +559,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="clk_reset" kind="reset_sink" version="22.4">
+  <interface name="clk_reset" kind="reset_sink" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -604,7 +604,7 @@ parameters are a RESULT of the module parameters. -->
     <role>reset</role>
    </port>
   </interface>
-  <interface name="m0" kind="avalon_master" version="22.4">
+  <interface name="m0" kind="avalon_master" version="23.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -778,7 +778,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maximumPendingReadTransactions">
     <type>int</type>
-    <value>4</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -826,7 +826,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="readWaitTime">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -880,6 +880,14 @@ parameters are a RESULT of the module parameters. -->
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
+   <parameter name="enableConcurrentSubordinateAccess">
+    <type>java.lang.Integer</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
    <parameter name="deviceFamily">
     <type>java.lang.String</type>
     <value>UNKNOWN</value>
@@ -907,7 +915,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avm_burstcount</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>8</width>
     <role>burstcount</role>
    </port>
    <port>
@@ -968,7 +976,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -976,7 +984,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Input</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -984,8 +992,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Avalon Memory Mapped Host</displayName>
-  <version>22.4</version>
+  <version>23.1</version>
  </plugin>
- <reportVersion>22.4 94</reportVersion>
+ <reportVersion>23.1 115</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

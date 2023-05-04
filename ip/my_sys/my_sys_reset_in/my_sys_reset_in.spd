@@ -6,6 +6,6 @@
    library="my_sys_reset_in"
    hasInlineConfiguration="true" />
  <topLevel name="my_sys_reset_in.my_sys_reset_in" />
- <deviceFamily name="agilex" />
+ <deviceFamily name="agilex7" />
  <device name="AGFB014R24A3E3VR0" />
 </simPackage>

@@ -36,7 +36,7 @@
 		.clk               (_connected_to_clk_),               //   input,   width = 1,       clk.clk
 		.reset             (_connected_to_reset_),             //   input,   width = 1, clk_reset.reset
 		.avm_address       (_connected_to_avm_address_),       //  output,  width = 32,        m0.address
-		.avm_burstcount    (_connected_to_avm_burstcount_),    //  output,   width = 4,          .burstcount
+		.avm_burstcount    (_connected_to_avm_burstcount_),    //  output,   width = 8,          .burstcount
 		.avm_readdata      (_connected_to_avm_readdata_),      //   input,  width = 32,          .readdata
 		.avm_writedata     (_connected_to_avm_writedata_),     //  output,  width = 32,          .writedata
 		.avm_waitrequest   (_connected_to_avm_waitrequest_),   //   input,   width = 1,          .waitrequest

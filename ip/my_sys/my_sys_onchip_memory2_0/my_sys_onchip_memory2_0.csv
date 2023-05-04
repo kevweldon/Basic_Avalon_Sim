@@ -1,19 +1,19 @@
-# system info my_sys_onchip_memory2_0 on 2023.01.15.17:40:17
+# system info my_sys_onchip_memory2_0 on 2023.05.03.13:41:42
 system_info:
 name,value
 DEVICE,AGFB014R24A3E3VR0
-DEVICE_FAMILY,Agilex
+DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for my_sys_onchip_memory2_0 on 2023.01.15.17:40:17
+# Files generated for my_sys_onchip_memory2_0 on 2023.05.03.13:41:42
 files:
 filepath,kind,attributes,module,is_top
 sim/my_sys_onchip_memory2_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_onchip_memory2_0,true
-altera_avalon_onchip_memory2_1936/sim/my_sys_onchip_memory2_0_onchip_memory2_0.hex,HEX,,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1936_he77p6y,false
-altera_avalon_onchip_memory2_1936/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1936_he77p6y.v,VERILOG,,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1936_he77p6y,false
+altera_avalon_onchip_memory2_1937/sim/my_sys_onchip_memory2_0_onchip_memory2_0.hex,HEX,,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1937_muw7ocq,false
+altera_avalon_onchip_memory2_1937/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1937_muw7ocq.v,VERILOG,,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1937_muw7ocq,false
 #
 # Map from instance-path to kind of module
 instances:
 instancePath,module
-my_sys_onchip_memory2_0.onchip_memory2_0,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1936_he77p6y
+my_sys_onchip_memory2_0.onchip_memory2_0,my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1937_muw7ocq

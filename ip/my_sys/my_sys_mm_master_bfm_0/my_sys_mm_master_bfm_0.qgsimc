@@ -62,7 +62,7 @@
           </parameter>
           <parameter>
             <name>AV_BURSTCOUNT_W</name>
-            <value>4</value>
+            <value>8</value>
           </parameter>
           <parameter>
             <name>AV_BURST_BNDR_ONLY</name>
@@ -78,11 +78,11 @@
           </parameter>
           <parameter>
             <name>AV_FIX_READ_LATENCY</name>
-            <value>1</value>
+            <value>2</value>
           </parameter>
           <parameter>
             <name>AV_MAX_PENDING_READS</name>
-            <value>4</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>AV_MAX_PENDING_WRITES</name>
@@ -98,7 +98,7 @@
           </parameter>
           <parameter>
             <name>AV_READ_WAIT_TIME</name>
-            <value>1</value>
+            <value>0</value>
           </parameter>
           <parameter>
             <name>AV_REGISTERINCOMINGSIGNALS</name>

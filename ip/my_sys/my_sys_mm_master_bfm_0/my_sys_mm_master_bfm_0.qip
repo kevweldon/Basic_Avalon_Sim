@@ -1,13 +1,13 @@
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_NAME "QsysPrimePro"
-set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_VERSION "22.4"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_VERSION "23.1"
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_ENV "QsysPrimePro"
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_avalon_mm_master_bfm"
 set_global_assignment -library "my_sys_mm_master_bfm_0" -name SOPCINFO_FILE [file join $::quartus(qip_path) "my_sys_mm_master_bfm_0.sopcinfo"]
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name SLD_INFO "QSYS_NAME my_sys_mm_master_bfm_0 HAS_SOPCINFO 1 GENERATION_ID 0"
 set_global_assignment -library "my_sys_mm_master_bfm_0" -name MISC_FILE [file join $::quartus(qip_path) "my_sys_mm_master_bfm_0.cmp"]
-set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex"
-set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_GENERATED_DEVICE_FAMILY "Agilex"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_TARGETED_DEVICE_FAMILY "Agilex 7"
+set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 7}"
 set_global_assignment -entity "my_sys_mm_master_bfm_0" -library "my_sys_mm_master_bfm_0" -name IP_QSYS_MODE "STANDALONE"
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "my_sys_mm_master_bfm_0" -name MISC_FILE [file join $::quartus(qip_path) "../my_sys_mm_master_bfm_0.ip"]

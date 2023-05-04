@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.01.15.17:40:17"
+ date="2023.05.03.13:41:41"
  outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/avalon_sims/Basic_Avalon_Sim/ip/my_sys/my_sys_reset_in/">
  <perimeter>
   <parameter
@@ -18,7 +18,7 @@
   <parameter
      name="AUTO_DEVICE_FAMILY"
      type="String"
-     defaultValue="Agilex"
+     defaultValue="Agilex 7"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -74,7 +74,7 @@
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="AGFB014R24A3E3VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_UNIQUE_ID" value="" />

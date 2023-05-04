@@ -2,7 +2,7 @@ module my_sys_mm_master_bfm_0 #(
 		parameter AV_ADDRESS_W               = 32,
 		parameter AV_SYMBOL_W                = 8,
 		parameter AV_NUMSYMBOLS              = 4,
-		parameter AV_BURSTCOUNT_W            = 4,
+		parameter AV_BURSTCOUNT_W            = 8,
 		parameter AV_READRESPONSE_W          = 8,
 		parameter AV_WRITERESPONSE_W         = 8,
 		parameter USE_READ                   = 1,
@@ -23,10 +23,10 @@ module my_sys_mm_master_bfm_0 #(
 		parameter AV_CONSTANT_BURST_BEHAVIOR = 1,
 		parameter AV_BURST_LINEWRAP          = 1,
 		parameter AV_BURST_BNDR_ONLY         = 1,
-		parameter AV_MAX_PENDING_READS       = 4,
+		parameter AV_MAX_PENDING_READS       = 0,
 		parameter AV_MAX_PENDING_WRITES      = 0,
-		parameter AV_FIX_READ_LATENCY        = 1,
-		parameter AV_READ_WAIT_TIME          = 1,
+		parameter AV_FIX_READ_LATENCY        = 2,
+		parameter AV_READ_WAIT_TIME          = 0,
 		parameter AV_WRITE_WAIT_TIME         = 0,
 		parameter AV_WAITREQUEST_ALLOWANCE   = 0,
 		parameter REGISTER_WAITREQUEST       = 0,
@@ -36,7 +36,7 @@ module my_sys_mm_master_bfm_0 #(
 		input  wire        clk,               //       clk.clk
 		input  wire        reset,             // clk_reset.reset
 		output wire [31:0] avm_address,       //        m0.address
-		output wire [3:0]  avm_burstcount,    //          .burstcount
+		output wire [7:0]  avm_burstcount,    //          .burstcount
 		input  wire [31:0] avm_readdata,      //          .readdata
 		output wire [31:0] avm_writedata,     //          .writedata
 		input  wire        avm_waitrequest,   //          .waitrequest

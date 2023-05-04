@@ -20,10 +20,10 @@ https://fpgasoftware.intel.com/eula.-->
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>clk</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="clock" version="22.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="clock" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="clock" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -57,10 +57,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>clk_reset</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="reset" version="22.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="reset" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="reset" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -89,10 +89,10 @@ https://fpgasoftware.intel.com/eula.-->
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>m0</ipxact:name>
-      <ipxact:busType vendor="intel" library="intel" name="avalon" version="22.4"></ipxact:busType>
+      <ipxact:busType vendor="intel" library="intel" name="avalon" version="23.1"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="22.4"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="intel" library="intel" name="avalon" version="23.1"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -279,7 +279,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="maximumPendingReadTransactions" type="int">
           <ipxact:name>maximumPendingReadTransactions</ipxact:name>
           <ipxact:displayName>Maximum pending read transactions</ipxact:displayName>
-          <ipxact:value>4</ipxact:value>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="maximumPendingWriteTransactions" type="int">
           <ipxact:name>maximumPendingWriteTransactions</ipxact:name>
@@ -309,7 +309,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="readWaitTime" type="int">
           <ipxact:name>readWaitTime</ipxact:name>
           <ipxact:displayName>Read wait</ipxact:displayName>
-          <ipxact:value>1</ipxact:value>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="registerIncomingSignals" type="bit">
           <ipxact:name>registerIncomingSignals</ipxact:name>
@@ -339,6 +339,11 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="writeWaitTime" type="int">
           <ipxact:name>writeWaitTime</ipxact:name>
           <ipxact:displayName>Write wait</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enableConcurrentSubordinateAccess" type="longint">
+          <ipxact:name>enableConcurrentSubordinateAccess</ipxact:name>
+          <ipxact:displayName>enableConcurrentSubordinateAccess</ipxact:displayName>
           <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
@@ -414,7 +419,7 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:vectors>
             <ipxact:vector>
               <ipxact:left>0</ipxact:left>
-              <ipxact:right>3</ipxact:right>
+              <ipxact:right>7</ipxact:right>
             </ipxact:vector>
           </ipxact:vectors>
           <ipxact:wireTypeDefs>
@@ -560,7 +565,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="AV_BURSTCOUNT_W" type="int">
           <ipxact:name>AV_BURSTCOUNT_W</ipxact:name>
           <ipxact:displayName>Burstcount width</ipxact:displayName>
-          <ipxact:value>4</ipxact:value>
+          <ipxact:value>8</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AV_READRESPONSE_W" type="int">
           <ipxact:name>AV_READRESPONSE_W</ipxact:name>
@@ -725,7 +730,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="AV_MAX_PENDING_READS" type="int">
           <ipxact:name>AV_MAX_PENDING_READS</ipxact:name>
           <ipxact:displayName>Maximum pending reads</ipxact:displayName>
-          <ipxact:value>4</ipxact:value>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AV_MAX_PENDING_WRITES" type="int">
           <ipxact:name>AV_MAX_PENDING_WRITES</ipxact:name>
@@ -735,12 +740,12 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="AV_FIX_READ_LATENCY" type="int">
           <ipxact:name>AV_FIX_READ_LATENCY</ipxact:name>
           <ipxact:displayName>Fixed read latency (cycles)</ipxact:displayName>
-          <ipxact:value>1</ipxact:value>
+          <ipxact:value>2</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AV_READ_WAIT_TIME" type="int">
           <ipxact:name>AV_READ_WAIT_TIME</ipxact:name>
           <ipxact:displayName>Fixed read wait time (cycles)</ipxact:displayName>
-          <ipxact:value>1</ipxact:value>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AV_WRITE_WAIT_TIME" type="int">
           <ipxact:name>AV_WRITE_WAIT_TIME</ipxact:name>
@@ -789,7 +794,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex</ipxact:value>
+          <ipxact:value>Agilex 7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -810,7 +815,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _originalDeviceFamily
       {
-         value = "Agilex";
+         value = "Agilex 7";
          type = "String";
       }
    }
@@ -913,7 +918,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;avm_burstcount&lt;/name&gt;
                     &lt;role&gt;burstcount&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;4&lt;/width&gt;
+                    &lt;width&gt;8&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1072,7 +1077,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
-                        &lt;value&gt;4&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
@@ -1096,7 +1101,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;readWaitTime&lt;/key&gt;
-                        &lt;value&gt;1&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;registerIncomingSignals&lt;/key&gt;
@@ -1120,6 +1125,10 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;writeWaitTime&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
                         &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;

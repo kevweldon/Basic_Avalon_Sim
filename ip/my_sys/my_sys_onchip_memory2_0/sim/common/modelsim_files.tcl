@@ -2,14 +2,14 @@
 namespace eval my_sys_onchip_memory2_0 {
   proc get_design_libraries {} {
     set libraries [dict create]
-    dict set libraries altera_avalon_onchip_memory2_1936 1
+    dict set libraries altera_avalon_onchip_memory2_1937 1
     dict set libraries my_sys_onchip_memory2_0           1
     return $libraries
   }
   
   proc get_memory_files {QSYS_SIMDIR} {
     set memory_files [list]
-    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1936/sim/my_sys_onchip_memory2_0_onchip_memory2_0.hex"]"
+    lappend memory_files "[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1937/sim/my_sys_onchip_memory2_0_onchip_memory2_0.hex"]"
     return $memory_files
   }
   
@@ -20,7 +20,7 @@ namespace eval my_sys_onchip_memory2_0 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1936/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1936_he77p6y.v"]\"  -work altera_avalon_onchip_memory2_1936"
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1937/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1937_muw7ocq.v"]\"  -work altera_avalon_onchip_memory2_1937"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/my_sys_onchip_memory2_0.v"]\"  -work my_sys_onchip_memory2_0"                                                                                             
     return $design_files
   }
@@ -64,4 +64,18 @@ namespace eval my_sys_onchip_memory2_0 {
       } 
       return $path 
   } 
+  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
+    set design_files [dict create]
+    return $design_files
+  }
+  
+  proc use_mg_bfm {} {
+    return 0
+  }
+  
+  proc get_mg_bfm_libraries {} {
+    set libraries [dict create]
+    return $libraries
+  }
+  
 }

@@ -67,4 +67,18 @@ namespace eval my_sys_mm_master_bfm_0 {
       } 
       return $path 
   } 
+  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
+    set design_files [dict create]
+    return $design_files
+  }
+  
+  proc use_mg_bfm {} {
+    return 0
+  }
+  
+  proc get_mg_bfm_libraries {} {
+    set libraries [dict create]
+    return $libraries
+  }
+  
 }

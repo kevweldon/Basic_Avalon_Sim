@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.01.15.17:40:17"
+ date="2023.05.03.13:41:41"
  outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/avalon_sims/Basic_Avalon_Sim/ip/my_sys/my_sys_mm_master_bfm_0/">
  <perimeter>
   <parameter
@@ -18,7 +18,7 @@
   <parameter
      name="AUTO_DEVICE_FAMILY"
      type="String"
-     defaultValue="Agilex"
+     defaultValue="Agilex 7"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -96,21 +96,22 @@
    <property name="isWriteable" value="false" />
    <property name="linewrapBursts" value="true" />
    <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="4" />
+   <property name="maximumPendingReadTransactions" value="0" />
    <property name="maximumPendingWriteTransactions" value="0" />
    <property name="minimumReadLatency" value="1" />
    <property name="minimumResponseLatency" value="1" />
    <property name="prSafe" value="false" />
    <property name="readLatency" value="0" />
-   <property name="readWaitTime" value="1" />
+   <property name="readWaitTime" value="0" />
    <property name="registerIncomingSignals" value="false" />
    <property name="registerOutgoingSignals" value="false" />
    <property name="setupTime" value="0" />
    <property name="timingUnits" value="Cycles" />
    <property name="waitrequestAllowance" value="0" />
    <property name="writeWaitTime" value="0" />
+   <property name="enableConcurrentSubordinateAccess" value="0" />
    <port name="avm_address" direction="output" role="address" width="32" />
-   <port name="avm_burstcount" direction="output" role="burstcount" width="4" />
+   <port name="avm_burstcount" direction="output" role="burstcount" width="8" />
    <port name="avm_readdata" direction="input" role="readdata" width="32" />
    <port name="avm_writedata" direction="output" role="writedata" width="32" />
    <port name="avm_waitrequest" direction="input" role="waitrequest" width="1" />
@@ -131,7 +132,7 @@
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="AGFB014R24A3E3VR0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
   <parameter name="AUTO_M0_ADDRESS_MAP" value="" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
@@ -154,7 +155,7 @@
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.4/94/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_3/acds/23.1/115/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="my_sys_mm_master_bfm_0">"Generating: my_sys_mm_master_bfm_0"</message>
@@ -195,7 +196,7 @@
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_3/acds/22.4/94/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_3/acds/23.1/115/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="my_sys_mm_master_bfm_0" as="mm_master_bfm_0" />

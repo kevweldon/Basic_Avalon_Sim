@@ -96,7 +96,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex</ipxact:value>
+          <ipxact:value>Agilex 7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -585,7 +585,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;name&gt;avm_burstcount&lt;/name&gt;
                         &lt;role&gt;burstcount&lt;/role&gt;
                         &lt;direction&gt;Output&lt;/direction&gt;
-                        &lt;width&gt;4&lt;/width&gt;
+                        &lt;width&gt;8&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -744,7 +744,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
-                            &lt;value&gt;4&lt;/value&gt;
+                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
@@ -768,7 +768,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;readWaitTime&lt;/key&gt;
-                            &lt;value&gt;1&lt;/value&gt;
+                            &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;registerIncomingSignals&lt;/key&gt;
@@ -792,6 +792,10 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;writeWaitTime&lt;/key&gt;
+                            &lt;value&gt;0&lt;/value&gt;
+                        &lt;/entry&gt;
+                        &lt;entry&gt;
+                            &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
                             &lt;value&gt;0&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/parameterValueMap&gt;
@@ -900,7 +904,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;avm_burstcount&lt;/name&gt;
                     &lt;role&gt;burstcount&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;4&lt;/width&gt;
+                    &lt;width&gt;8&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1059,7 +1063,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingReadTransactions&lt;/key&gt;
-                        &lt;value&gt;4&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;maximumPendingWriteTransactions&lt;/key&gt;
@@ -1083,7 +1087,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;readWaitTime&lt;/key&gt;
-                        &lt;value&gt;1&lt;/value&gt;
+                        &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;registerIncomingSignals&lt;/key&gt;
@@ -1107,6 +1111,10 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;writeWaitTime&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;enableConcurrentSubordinateAccess&lt;/key&gt;
                         &lt;value&gt;0&lt;/value&gt;
                     &lt;/entry&gt;
                 &lt;/parameterValueMap&gt;
@@ -1192,7 +1200,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
         &lt;parameterName&gt;AV_BURSTCOUNT_W&lt;/parameterName&gt;
         &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
-        &lt;parameterValue&gt;4&lt;/parameterValue&gt;
+        &lt;parameterValue&gt;8&lt;/parameterValue&gt;
     &lt;/hdlParameterDescriptorDefinition&gt;
     &lt;hdlParameterDescriptorDefinition&gt;
         &lt;description&gt;This is the word length in bits of the read response port.&lt;/description&gt;
@@ -1381,7 +1389,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
         &lt;parameterName&gt;AV_MAX_PENDING_READS&lt;/parameterName&gt;
         &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
-        &lt;parameterValue&gt;4&lt;/parameterValue&gt;
+        &lt;parameterValue&gt;0&lt;/parameterValue&gt;
     &lt;/hdlParameterDescriptorDefinition&gt;
     &lt;hdlParameterDescriptorDefinition&gt;
         &lt;description&gt;Maximum pending write transactions&lt;/description&gt;
@@ -1399,7 +1407,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
         &lt;parameterName&gt;AV_FIX_READ_LATENCY&lt;/parameterName&gt;
         &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
-        &lt;parameterValue&gt;1&lt;/parameterValue&gt;
+        &lt;parameterValue&gt;2&lt;/parameterValue&gt;
     &lt;/hdlParameterDescriptorDefinition&gt;
     &lt;hdlParameterDescriptorDefinition&gt;
         &lt;description&gt;Fixed read wait time (cycles)&lt;/description&gt;
@@ -1408,7 +1416,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;parameterHdlType&gt;INTEGER&lt;/parameterHdlType&gt;
         &lt;parameterName&gt;AV_READ_WAIT_TIME&lt;/parameterName&gt;
         &lt;parameterType&gt;java.lang.Integer&lt;/parameterType&gt;
-        &lt;parameterValue&gt;1&lt;/parameterValue&gt;
+        &lt;parameterValue&gt;0&lt;/parameterValue&gt;
     &lt;/hdlParameterDescriptorDefinition&gt;
     &lt;hdlParameterDescriptorDefinition&gt;
         &lt;description&gt;Fixed write wait time (cycles)&lt;/description&gt;
@@ -1540,7 +1548,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;name&gt;address&lt;/name&gt;
                         &lt;role&gt;address&lt;/role&gt;
                         &lt;direction&gt;Input&lt;/direction&gt;
-                        &lt;width&gt;10&lt;/width&gt;
+                        &lt;width&gt;8&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1576,7 +1584,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;name&gt;readdata&lt;/name&gt;
                         &lt;role&gt;readdata&lt;/role&gt;
                         &lt;direction&gt;Output&lt;/direction&gt;
-                        &lt;width&gt;16&lt;/width&gt;
+                        &lt;width&gt;32&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1585,7 +1593,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;name&gt;writedata&lt;/name&gt;
                         &lt;role&gt;writedata&lt;/role&gt;
                         &lt;direction&gt;Input&lt;/direction&gt;
-                        &lt;width&gt;16&lt;/width&gt;
+                        &lt;width&gt;32&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1594,7 +1602,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;name&gt;byteenable&lt;/name&gt;
                         &lt;role&gt;byteenable&lt;/role&gt;
                         &lt;direction&gt;Input&lt;/direction&gt;
-                        &lt;width&gt;2&lt;/width&gt;
+                        &lt;width&gt;4&lt;/width&gt;
                         &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                         &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                         &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1632,7 +1640,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;addressSpan&lt;/key&gt;
-                            &lt;value&gt;2048&lt;/value&gt;
+                            &lt;value&gt;1024&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;addressUnits&lt;/key&gt;
@@ -1675,7 +1683,7 @@ https://fpgasoftware.intel.com/eula.-->
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;explicitAddressSpan&lt;/key&gt;
-                            &lt;value&gt;2048&lt;/value&gt;
+                            &lt;value&gt;1024&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;holdTime&lt;/key&gt;
@@ -1832,7 +1840,7 @@ https://fpgasoftware.intel.com/eula.-->
     &lt;/boundary&gt;
     &lt;originalModuleInfo&gt;
         &lt;className&gt;altera_avalon_onchip_memory2&lt;/className&gt;
-        &lt;version&gt;19.3.6&lt;/version&gt;
+        &lt;version&gt;19.3.7&lt;/version&gt;
         &lt;displayName&gt;On-Chip Memory (RAM or ROM) Intel FPGA IP&lt;/displayName&gt;
     &lt;/originalModuleInfo&gt;
     &lt;systemInfoParameterDescriptors&gt;
@@ -1866,15 +1874,15 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;suppliedSystemInfos&gt;
                         &lt;entry&gt;
                             &lt;key&gt;ADDRESS_MAP&lt;/key&gt;
-                            &lt;value&gt;&amp;lt;address-map&amp;gt;&amp;lt;slave name='s1' start='0x0' end='0x800' datawidth='16' /&amp;gt;&amp;lt;/address-map&amp;gt;&lt;/value&gt;
+                            &lt;value&gt;&amp;lt;address-map&amp;gt;&amp;lt;slave name='s1' start='0x0' end='0x400' datawidth='32' /&amp;gt;&amp;lt;/address-map&amp;gt;&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;ADDRESS_WIDTH&lt;/key&gt;
-                            &lt;value&gt;11&lt;/value&gt;
+                            &lt;value&gt;10&lt;/value&gt;
                         &lt;/entry&gt;
                         &lt;entry&gt;
                             &lt;key&gt;MAX_SLAVE_DATA_WIDTH&lt;/key&gt;
-                            &lt;value&gt;16&lt;/value&gt;
+                            &lt;value&gt;32&lt;/value&gt;
                         &lt;/entry&gt;
                     &lt;/suppliedSystemInfos&gt;
                     &lt;consumedSystemInfos/&gt;
@@ -1932,7 +1940,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;address&lt;/name&gt;
                     &lt;role&gt;address&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;10&lt;/width&gt;
+                    &lt;width&gt;8&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1968,7 +1976,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;readdata&lt;/name&gt;
                     &lt;role&gt;readdata&lt;/role&gt;
                     &lt;direction&gt;Output&lt;/direction&gt;
-                    &lt;width&gt;16&lt;/width&gt;
+                    &lt;width&gt;32&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1977,7 +1985,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;writedata&lt;/name&gt;
                     &lt;role&gt;writedata&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;16&lt;/width&gt;
+                    &lt;width&gt;32&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -1986,7 +1994,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;name&gt;byteenable&lt;/name&gt;
                     &lt;role&gt;byteenable&lt;/role&gt;
                     &lt;direction&gt;Input&lt;/direction&gt;
-                    &lt;width&gt;2&lt;/width&gt;
+                    &lt;width&gt;4&lt;/width&gt;
                     &lt;lowerBound&gt;0&lt;/lowerBound&gt;
                     &lt;vhdlType&gt;STD_LOGIC_VECTOR&lt;/vhdlType&gt;
                     &lt;terminationValue&gt;0&lt;/terminationValue&gt;
@@ -2024,7 +2032,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;addressSpan&lt;/key&gt;
-                        &lt;value&gt;2048&lt;/value&gt;
+                        &lt;value&gt;1024&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;addressUnits&lt;/key&gt;
@@ -2067,7 +2075,7 @@ https://fpgasoftware.intel.com/eula.-->
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;explicitAddressSpan&lt;/key&gt;
-                        &lt;value&gt;2048&lt;/value&gt;
+                        &lt;value&gt;1024&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;holdTime&lt;/key&gt;
@@ -2336,7 +2344,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;/entry&gt;
         &lt;entry&gt;
             &lt;key&gt;embeddedsw.CMacro.SIZE_VALUE&lt;/key&gt;
-            &lt;value&gt;2048&lt;/value&gt;
+            &lt;value&gt;1024&lt;/value&gt;
         &lt;/entry&gt;
         &lt;entry&gt;
             &lt;key&gt;embeddedsw.CMacro.WRITABLE&lt;/key&gt;
@@ -2364,7 +2372,7 @@ https://fpgasoftware.intel.com/eula.-->
         &lt;/entry&gt;
         &lt;entry&gt;
             &lt;key&gt;embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH&lt;/key&gt;
-            &lt;value&gt;16&lt;/value&gt;
+            &lt;value&gt;32&lt;/value&gt;
         &lt;/entry&gt;
         &lt;entry&gt;
             &lt;key&gt;embeddedsw.memoryInfo.MEM_INIT_FILENAME&lt;/key&gt;
@@ -2728,7 +2736,7 @@ https://fpgasoftware.intel.com/eula.-->
       </altera:module>
     </altera:modules>
     <altera:connections>
-      <altera:connection altera:kind="avalon" altera:version="22.4" altera:start="mm_master_bfm_0.m0" altera:end="onchip_memory2_0.s1">
+      <altera:connection altera:kind="avalon" altera:version="23.1" altera:start="mm_master_bfm_0.m0" altera:end="onchip_memory2_0.s1">
         <altera:connection_parameter altera:parameter_name="arbitrationPriority" altera:parameter_value="1"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="baseAddress" altera:parameter_value="0x0000"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="defaultConnection" altera:parameter_value="false"></altera:connection_parameter>
@@ -2738,6 +2746,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableAllPipelines" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableEccProtection" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.enableInstrumentation" altera:parameter_value="FALSE"></altera:connection_parameter>
+        <altera:connection_parameter altera:parameter_name="qsys_mm.enableOutOfOrderSupport" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.insertDefaultSlave" altera:parameter_value="FALSE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectResetSource" altera:parameter_value="DEFAULT"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.interconnectType" altera:parameter_value="STANDARD"></altera:connection_parameter>
@@ -2748,11 +2757,11 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:connection_parameter altera:parameter_name="qsys_mm.syncResets" altera:parameter_value="TRUE"></altera:connection_parameter>
         <altera:connection_parameter altera:parameter_name="qsys_mm.widthAdapterImplementation" altera:parameter_value="GENERIC_CONVERTER"></altera:connection_parameter>
       </altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.4" altera:start="clock_in.out_clk" altera:end="reset_in.clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.4" altera:start="clock_in.out_clk" altera:end="mm_master_bfm_0.clk"></altera:connection>
-      <altera:connection altera:kind="clock" altera:version="22.4" altera:start="clock_in.out_clk" altera:end="onchip_memory2_0.clk1"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="22.4" altera:start="reset_in.out_reset" altera:end="mm_master_bfm_0.clk_reset"></altera:connection>
-      <altera:connection altera:kind="reset" altera:version="22.4" altera:start="reset_in.out_reset" altera:end="onchip_memory2_0.reset1"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clock_in.out_clk" altera:end="reset_in.clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clock_in.out_clk" altera:end="mm_master_bfm_0.clk"></altera:connection>
+      <altera:connection altera:kind="clock" altera:version="23.1" altera:start="clock_in.out_clk" altera:end="onchip_memory2_0.clk1"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="reset_in.out_reset" altera:end="mm_master_bfm_0.clk_reset"></altera:connection>
+      <altera:connection altera:kind="reset" altera:version="23.1" altera:start="reset_in.out_reset" altera:end="onchip_memory2_0.reset1"></altera:connection>
     </altera:connections>
     <altera:interconnect_requirements></altera:interconnect_requirements>
     <altera:wire_level_connections></altera:wire_level_connections>
@@ -2772,11 +2781,11 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:busInterfaces>
           <ipxact:busInterface>
             <ipxact:name>onchip_memory2_0.s1</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="22.4"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="23.1"></ipxact:busType>
           </ipxact:busInterface>
           <ipxact:busInterface>
             <ipxact:name>mm_master_bfm_0.m0</ipxact:name>
-            <ipxact:busType vendor="intel" library="intel" name="avalon" version="22.4"></ipxact:busType>
+            <ipxact:busType vendor="intel" library="intel" name="avalon" version="23.1"></ipxact:busType>
             <ipxact:master>
               <ipxact:addressSpaceRef addressSpaceRef="mm_master_bfm_0.m0">
                 <ipxact:baseAddress>0x0000_0000</ipxact:baseAddress>
@@ -2791,7 +2800,7 @@ https://fpgasoftware.intel.com/eula.-->
               <ipxact:segment>
                 <ipxact:name>onchip_memory2_0.s1</ipxact:name>
                 <ipxact:addressOffset>0x0000_0000</ipxact:addressOffset>
-                <ipxact:range>0x0000_0800</ipxact:range>
+                <ipxact:range>0x0000_0400</ipxact:range>
               </ipxact:segment>
             </ipxact:segments>
           </ipxact:addressSpace>

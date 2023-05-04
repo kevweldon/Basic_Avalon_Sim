@@ -3,7 +3,7 @@
 			AV_ADDRESS_W               : integer := 32;
 			AV_SYMBOL_W                : integer := 8;
 			AV_NUMSYMBOLS              : integer := 4;
-			AV_BURSTCOUNT_W            : integer := 4;
+			AV_BURSTCOUNT_W            : integer := 8;
 			AV_READRESPONSE_W          : integer := 8;
 			AV_WRITERESPONSE_W         : integer := 8;
 			USE_READ                   : integer := 1;
@@ -24,10 +24,10 @@
 			AV_CONSTANT_BURST_BEHAVIOR : integer := 1;
 			AV_BURST_LINEWRAP          : integer := 1;
 			AV_BURST_BNDR_ONLY         : integer := 1;
-			AV_MAX_PENDING_READS       : integer := 4;
+			AV_MAX_PENDING_READS       : integer := 0;
 			AV_MAX_PENDING_WRITES      : integer := 0;
-			AV_FIX_READ_LATENCY        : integer := 1;
-			AV_READ_WAIT_TIME          : integer := 1;
+			AV_FIX_READ_LATENCY        : integer := 2;
+			AV_READ_WAIT_TIME          : integer := 0;
 			AV_WRITE_WAIT_TIME         : integer := 0;
 			AV_WAITREQUEST_ALLOWANCE   : integer := 0;
 			REGISTER_WAITREQUEST       : integer := 0;
@@ -38,7 +38,7 @@
 			clk               : in  std_logic                     := 'X';             -- clk
 			reset             : in  std_logic                     := 'X';             -- reset
 			avm_address       : out std_logic_vector(31 downto 0);                    -- address
-			avm_burstcount    : out std_logic_vector(3 downto 0);                     -- burstcount
+			avm_burstcount    : out std_logic_vector(7 downto 0);                     -- burstcount
 			avm_readdata      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			avm_writedata     : out std_logic_vector(31 downto 0);                    -- writedata
 			avm_waitrequest   : in  std_logic                     := 'X';             -- waitrequest

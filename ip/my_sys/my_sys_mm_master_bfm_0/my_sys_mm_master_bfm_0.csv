@@ -1,12 +1,12 @@
-# system info my_sys_mm_master_bfm_0 on 2023.01.15.17:40:17
+# system info my_sys_mm_master_bfm_0 on 2023.05.03.13:41:41
 system_info:
 name,value
 DEVICE,AGFB014R24A3E3VR0
-DEVICE_FAMILY,Agilex
+DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for my_sys_mm_master_bfm_0 on 2023.01.15.17:40:17
+# Files generated for my_sys_mm_master_bfm_0 on 2023.05.03.13:41:41
 files:
 filepath,kind,attributes,module,is_top
 sim/my_sys_mm_master_bfm_0.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_mm_master_bfm_0,true
