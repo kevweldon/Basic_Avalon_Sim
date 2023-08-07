@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.1/ip/iconnect/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm.sv.terp#1 $
+// $Id: //acds/rel/23.2/ip/iconnect/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2023/02/02 $
+// $Date: 2023/04/27 $
 // $Author: psgswbuild $
 //-----------------------------------------------------------------------------
 // =head1 NAME
@@ -1239,7 +1239,7 @@ module altera_avalon_mm_master_bfm(
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   $Revision: #1 $");
       print(VERBOSITY_INFO, message);
-      $sformat(message, "%m: -   $Date: 2023/02/02 $");
+      $sformat(message, "%m: -   $Date: 2023/04/27 $");
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   AV_ADDRESS_W             = %0d",
                AV_ADDRESS_W);

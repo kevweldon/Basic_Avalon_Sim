@@ -1,7 +1,7 @@
 set_global_assignment -name TOP_LEVEL_ENTITY my_sys
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.2.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "05:49:27  AUGUST 23, 2021"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1.0 Pro Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.2.0 Pro Edition"
 set_global_assignment -name FAMILY "Agilex 7"
 set_global_assignment -name DEVICE AGFB014R24A3E3VR0
 set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON

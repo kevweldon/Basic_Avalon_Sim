@@ -37,9 +37,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.1/ip/iconnect/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
+// $Id: //acds/rel/23.2/ip/iconnect/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/02/02 $
+// $Date: 2023/04/27 $
 
 // ------------------------------------------
 // Merlin Burst Uncompressor

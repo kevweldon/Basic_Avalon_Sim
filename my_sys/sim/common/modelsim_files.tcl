@@ -132,30 +132,4 @@ namespace eval my_sys {
       } 
       return $path 
   } 
-  proc get_mg_bfm_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR QUARTUS_INSTALL_DIR} {
-    set design_files [dict create]
-    set design_files [dict merge $design_files [my_sys_mm_master_bfm_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_mm_master_bfm_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_clock_in::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_clock_in/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_onchip_memory2_0::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_onchip_memory2_0/sim/" $QUARTUS_INSTALL_DIR]]
-    set design_files [dict merge $design_files [my_sys_reset_in::get_mg_bfm_design_files $USER_DEFINED_COMPILE_OPTIONS $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_VHDL_COMPILE_OPTIONS "$QSYS_SIMDIR/../../ip/my_sys/my_sys_reset_in/sim/" $QUARTUS_INSTALL_DIR]]
-    return $design_files
-  }
-  
-  proc use_mg_bfm {} {
-    if [string is true -strict [my_sys_mm_master_bfm_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_clock_in::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_onchip_memory2_0::use_mg_bfm]] {return 1}
-    if [string is true -strict [my_sys_reset_in::use_mg_bfm]] {return 1}
-    return 0
-  }
-  
-  proc get_mg_bfm_libraries {} {
-    set libraries [dict create]
-    set libraries [dict merge $libraries [my_sys_mm_master_bfm_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_clock_in::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_onchip_memory2_0::get_mg_bfm_libraries]]
-    set libraries [dict merge $libraries [my_sys_reset_in::get_mg_bfm_libraries]]
-    return $libraries
-  }
-  
 }

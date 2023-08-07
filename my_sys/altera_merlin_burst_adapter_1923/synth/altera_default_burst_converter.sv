@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.1/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_default_burst_converter.sv#1 $
+// $Id: //acds/rel/23.2/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_default_burst_converter.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/02/02 $
+// $Date: 2023/04/27 $
 
 // --------------------------------------------
 // Default Burst Converter

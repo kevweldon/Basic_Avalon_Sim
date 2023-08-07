@@ -1,4 +1,4 @@
-# system info my_sys_clock_in on 2023.05.03.13:41:41
+# system info my_sys_clock_in on 2023.08.07.08:18:01
 system_info:
 name,value
 DEVICE,AGFB014R24A3E3VR0
@@ -6,7 +6,7 @@ DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for my_sys_clock_in on 2023.05.03.13:41:41
+# Files generated for my_sys_clock_in on 2023.08.07.08:18:01
 files:
 filepath,kind,attributes,module,is_top
 sim/my_sys_clock_in.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys_clock_in,true

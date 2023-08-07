@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.1/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_merlin_burst_adapter_new.sv#1 $
-// $Revision: #1 $
-// $Date: 2023/02/02 $
+// $Id: //acds/rel/23.2/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_merlin_burst_adapter_new.sv#2 $
+// $Revision: #2 $
+// $Date: 2023/05/17 $
 
 `timescale 1 ns / 1 ns
 
