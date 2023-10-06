@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 23.2 94 linux 2023.08.07.08:18:06
+# ACDS 23.3 104 linux 2023.10.06.06:02:21
 
 # ----------------------------------------
 # Initialize variables
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_4/acds/23.2/94.2/linux64/quartus/"
+  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -209,6 +209,23 @@ ensure_lib          ./libraries/
 ensure_lib          ./libraries/work/
 vmap       work     ./libraries/work/
 vmap       work_lib ./libraries/work/
+
+# ----------------------------------------
+# get DPI libraries
+set libraries [dict create]
+set libraries [dict merge $libraries [my_sys::get_dpi_libraries "$QSYS_SIMDIR"]]
+set dpi_libraries [dict values $libraries]
+
+# ----------------------------------------
+# setup shared libraries
+set DPI_LIBRARIES_ELAB ""
+if { [llength $dpi_libraries] != 0 } {
+  echo "Using DPI Library settings"
+  foreach library $dpi_libraries {
+    append DPI_LIBRARIES_ELAB "-sv_lib $library "
+  }
+}
+
 if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
   ensure_lib                   ./libraries/lpm_ver/          
   vmap       lpm_ver           ./libraries/lpm_ver/          
@@ -328,7 +345,7 @@ alias elab {
   }
   set elabcommand " $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS"
   foreach library $logical_libraries { append elabcommand " -L $library" }
-  append elabcommand " $TOP_LEVEL_NAME"
+  append elabcommand " $TOP_LEVEL_NAME $DPI_LIBRARIES_ELAB "
   eval vsim $elabcommand
 }
 
@@ -340,7 +357,7 @@ alias elab_debug {
   }
   set elabcommand " $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS"
   foreach library $logical_libraries { append elabcommand " -L $library" }
-  append elabcommand " $TOP_LEVEL_NAME"
+  append elabcommand " $TOP_LEVEL_NAME $DPI_LIBRARIES_ELAB "
   eval vsim -voptargs=+acc $elabcommand
 }
 
