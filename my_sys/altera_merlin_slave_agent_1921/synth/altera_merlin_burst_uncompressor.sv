@@ -37,9 +37,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_slave_agent/altera_merlin_burst_uncompressor.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // ------------------------------------------
 // Merlin Burst Uncompressor
@@ -374,3 +374,6 @@ endfunction
    assign source_is_compressed = 1'b0;
 endmodule
 
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aJqsKcXSLp0ETFOcXleK2wkS9Ks0SiwfohOAORko+36Ai7kvs8NGmRGEyJAx/R/VFUUADgWgyiSGe7UFglqzhT+HrHw+gEnTVd7V/Uy+RfavXPdmLZ5oXsjBfrANjAGqUxtdfvhBM8/2sAUu4hncpOt+DmjHql71O5Dt8gXFLxi3s/1SoDOgaxHe6+NJBV9Jt5ZSNoi5TKazNL3N5Al/MQLheDNzeSGFsdgE3DVYQbmTe9aQwzlZGzfznaCv4wCS9f2SYztHoLubeMrHbI2pQcM+HdIzKI1pOXIJrrU8FNecbdsCBnzCXWkpZzHkJCOhqi0YrkRE71aI3gZgK8Jddv7cGbpDfENIyhHowAOGHnGXIlY8WYobXYof2Ov/wZmTnTEbq9XlJKhPlQqDvyCxn+Pwh3xdOGTZzrEQky2xtQt8rkIgvLolCe9VDjMq9bmG7eYeHUxUMuwrngjjMejF3Gj8DeYydqL/Bu48qqBLlyb3eoQ+8LhoSAwvGpwQay+Znqw90uZWxOki6twzxnNNS/N9KFOB3StISBVEa3sBKoxlRjKFHjhEapIDew8Nbfupzd5L2g/c91F7YFRWf0hPGgIv1ZcuKxKD+UHbl/sAiYU3+F6qHT4rnjlkW8yejhEKVW7P9YPsblCWgT9wc+EJ1YK7VRmKQxu+PbZYMi+EdL6vsHiNfAzFWqp9Ov2xjer2pd4Mhn0HA9YCocK0dWqsOcD9dN4CteUsGu3P9eSgFGgkgkmgKcfBQyCxaC8u8eUnNmoISJLlo9xzu+2CCpMu1SJ"
+`endif

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.10.06.06:02:17"
+ date="2024.01.30.12:43:03"
  outputDirectory="/nfs/site/disks/psg_data_14/kweldon/design_files/examples/simulations/avalon_sims/Basic_Avalon_Sim/ip/my_sys/my_sys_mm_master_bfm_0/">
  <perimeter>
   <parameter
@@ -24,13 +24,19 @@
   <parameter
      name="AUTO_DEVICE"
      type="String"
-     defaultValue="AGFB014R24A3E3VR0"
+     defaultValue="AGFB014R24A3E3V"
      onHdl="0"
      affectsHdl="1" />
   <parameter
      name="AUTO_DEVICE_SPEEDGRADE"
      type="String"
      defaultValue="3"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BOARD"
+     type="String"
+     defaultValue="default"
      onHdl="0"
      affectsHdl="1" />
   <parameter
@@ -130,8 +136,9 @@
    name="my_sys_mm_master_bfm_0">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
-  <parameter name="AUTO_DEVICE" value="AGFB014R24A3E3VR0" />
+  <parameter name="AUTO_DEVICE" value="AGFB014R24A3E3V" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 7" />
+  <parameter name="AUTO_BOARD" value="default" />
   <parameter name="AUTO_M0_ADDRESS_MAP" value="" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
@@ -154,7 +161,7 @@
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.4/79/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="my_sys_mm_master_bfm_0">"Generating: my_sys_mm_master_bfm_0"</message>
@@ -195,7 +202,7 @@
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
+       path="/nfs/site/disks/swbld_archive_4/acds/23.4/79/linux64/ip/altera/sopc_builder_ip/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="my_sys_mm_master_bfm_0" as="mm_master_bfm_0" />

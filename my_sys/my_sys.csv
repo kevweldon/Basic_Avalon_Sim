@@ -1,12 +1,12 @@
-# system info my_sys on 2023.10.06.06:02:19
+# system info my_sys on 2024.01.30.12:43:07
 system_info:
 name,value
-DEVICE,AGFB014R24A3E3VR0
+DEVICE,AGFB014R24A3E3V
 DEVICE_FAMILY,Agilex 7
 GENERATION_ID,0
 #
 #
-# Files generated for my_sys on 2023.10.06.06:02:19
+# Files generated for my_sys on 2024.01.30.12:43:07
 files:
 filepath,kind,attributes,module,is_top
 sim/my_sys.v,VERILOG,CONTAINS_INLINE_CONFIGURATION,my_sys,true

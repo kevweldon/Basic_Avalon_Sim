@@ -1,5 +1,5 @@
 set_global_assignment -entity "my_sys" -library "my_sys" -name IP_TOOL_NAME "QsysPrimePro"
-set_global_assignment -entity "my_sys" -library "my_sys" -name IP_TOOL_VERSION "23.3"
+set_global_assignment -entity "my_sys" -library "my_sys" -name IP_TOOL_VERSION "23.4"
 set_global_assignment -entity "my_sys" -library "my_sys" -name IP_TOOL_ENV "QsysPrimePro"
 set_global_assignment -library "my_sys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "my_sys.sopcinfo"]
 set_global_assignment -entity "my_sys" -library "my_sys" -name SLD_INFO "QSYS_NAME my_sys HAS_SOPCINFO 1 GENERATION_ID 0"

@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_incr_burst_converter.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_incr_burst_converter.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // ----------------------------------------------------------
 // This component is used for INCR Avalon slave
@@ -515,3 +515,6 @@ module altera_incr_burst_converter
     endfunction
 
 endmodule
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aJQ9auixNoikTzwyXw4QFYHpUkKIJB7LBOOmxCzpO+GHvRd88yKf+RSVfSJGLEd+aTfnhV7qDowuMdEDpLFSDvBddLO78WzAjTtq9/LsUf+5GyTjlIoZYwtLM4tg5U9sSKi1wxjFVMXIMEiDwSGVihDuSfmPh7F/fkuwzYT8cvf996GqNXHrudD43dEefKjnPxNCiHDVM8rlPFUrj4F2U0YvNllVGvbW6Gx6fVJC0S9QPu3joZmOiZO6b4nwi3ivQmq9bdwEwXIxu1D/tq+XVJfDVu1H4Di7TZRsKlPlqztvIV3uzPWhLMRd/bQ1kAjqeBBzu8jXdbtXuEktAk2LfDFzPtw28UsRHScQvvjzxCWUuTWrX+SB3L5WiameAXZt/wVmasQyoK69X0FBpQSfPPvzrvYXa2ifAyTbNdXdf3bLtK2Ze5vrarOWWspCjUNlm0VyPIL4DqqUEvN5rMXdu9qS4pJJe+UbmzPN2GL70YtQzMLXaUDfXD24zh0GOkoQ3JT3+ayJ90fQDuk2AMHN+xrj41IrxGC3TbreHlCp260G5MbiM/D89K9D1qyfuzzVUG5CA19C9HySDSEnhUn1XAw3oJ1QhMaTk7bnWYmawQQHmBKK9YgvTakeR9/JhvSVMsvEmcFio7+D0bwp3ytLf3+nGmW8HftU9AiCc/Zr/02TSsWOWuBuyfb8r0A4pFKWZevPwolJpkPA9T+ueRIpj9u7nhLUI8/A94JTaqO3F9wNbaprF/urH3PwEP2Drz/gYITOZ5ZMSx+uKcnvLq6hpzd"
+`endif

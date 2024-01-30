@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm.sv.terp#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/verification/altera_avalon_mm_master_bfm/altera_avalon_mm_master_bfm.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 // $Author: psgswbuild $
 //-----------------------------------------------------------------------------
 // =head1 NAME
@@ -1239,7 +1239,7 @@ module altera_avalon_mm_master_bfm(
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   $Revision: #1 $");
       print(VERBOSITY_INFO, message);
-      $sformat(message, "%m: -   $Date: 2023/08/03 $");
+      $sformat(message, "%m: -   $Date: 2023/10/12 $");
       print(VERBOSITY_INFO, message);
       $sformat(message, "%m: -   AV_ADDRESS_W             = %0d",
                AV_ADDRESS_W);
@@ -2127,3 +2127,6 @@ endmodule
 
 
 
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Gwt3whRcE3+dmXyqrSB7tq2BawD3oh9aWud7Z4eAN187O43IWvM/KG8cuzSO3rcLdOg/6M8a5bUzV8fSCamrY3rLfHnQy43nef+FViJgCalid4DqTidvdzU87e5ZQ/v7HVm3olDBJc6LsbYrqiDrF0RkIcqQRi4zpc6Rtw0M2aW8FBhW2R9GBM/OcdpnaI+Km4xIFjjLOMKR0kXUH+3JyiE6l+btThmGIC55ugx3xhoriPFN7TIn+B3oRuD6WsBHZ2oWyEdVv03kZ/xTr5Mv+66jdSdCYmR7CDRGh6V8YqRot40i36cc8F1D9IyPFOcLJszt5czibJ1GlzNvDu829H9ImOo0YOyvt1uB5NUHXBIZaR2L4j5DMCI2RB8RLPKSQWOTBmzInSKbgffYFNVgmxlqualnqDcU5Botq2hoS+AGqZ8qWloKGSIRCmDoZ0bympTMj6K23G8Ew47/0PEJWM+aIFCqXxIGkwKbPefwSQx8/g/9xo53CK2hJsz4qDC0x8wN860MrbPtQnUt739u/JQfS2y5pCxTslWcGGS8shLXasZFF0JeYJ82f5usQUDCFVHdLDGLMFpcKVbATwPjVC8/UKi58aCOyPha6Qh2boS9tbp4jnm5Ptxj2C/juEhUSrCZKRPpaAjLIElyPUHaoViH4e1WtaCgVgZ+sGXgti3Uj2GFSDFhYeDhmRSC1z3ZR/LjaydHHPwG/FlbBGEcPdSGBisrZ7ZUzVHuPlzTDPUqPo1A67mIe8/dtM/D8iSq9QXC47G/tjJTUMHynCZzAwzanf0sDFWmJJZbBmWzSe+rzKiJYtdZKPBI1Dj0kzKtdYLSugW9g4roMXkNNg6oQBLi5fvC3SolXAhOLyZ7ko+gNJvAuyJ/oB2e3pB6H+vTcdHyy5lWZhYdJy2mnn5BRne0QPDK0R7zeQEd0CNxD3+rn1697h1Gk6X5o5ipfIjLIO3OLOY5Qygd4S1CaN8ESO8HHDU1alWbRrhZJ3t4Ex6Qxg24ueMSXiRKFfrQ5qPi"
+`endif

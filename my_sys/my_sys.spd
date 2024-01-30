@@ -121,7 +121,7 @@
    hasInlineConfiguration="true" />
  <topLevel name="my_sys.my_sys" />
  <deviceFamily name="agilex7" />
- <device name="AGFB014R24A3E3VR0" />
+ <device name="AGFB014R24A3E3V" />
  <modelMap
    controllerPath="my_sys.onchip_memory2_0"
    modelPath="my_sys.onchip_memory2_0" />

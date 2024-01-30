@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/verification/lib/avalon_utilities_pkg.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/verification/lib/avalon_utilities_pkg.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 //-----------------------------------------------------------------------------
 // =head1 NAME
 // avalon_utilities_pkg
@@ -78,3 +78,6 @@ endpackage
 
 `endif
    
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aJ02x9cComQ6mqysJ8vCxCE6IpuXZGz7iIoid6N2wK72rGWCUp49gYU1KB61669/vC6MQStVOZlLSc+EXfWtg+LLOCntv+pkpUPflTcBXCwz98SXfR9Kv2OmAR2xCaePLbe6O81XlAUJ76J9NSfmEu5uRo8gcujzNZTQ08KUNtjFl9y/NhVKLJLssR4+EMN5wq6LDLUk9URuhzc6WyNXl0H7YGA3h1yPcUYYVVydGeCEjeMLu9QMqHt43JF7JDhYRRZTfFlMZsIP1n15a7BIaHuTgTdpL8AXiVP1k4pFqklOKcrJnT03qr7XGF4g5xy71TC2o/0ZQQmrg/R21p5N4NY2PMYmJTKlwCx72Il5xLMaAPrELs8b/nFU0ageZ891kvk5rDOqlM3of5bLdDzV4hUw3mXsB444PV7ZUHKkWntD2TIOnmm19p5OtBAzFe88xAwpbQqMSsIMKW5FVVbU6iBGIk/eY83QOJhZsBmzjMu2yLsi+krZ3D8B5EmD79L/ruJv3owiKR7f4OiJHVvmwM+KkUkpfOB3GlHthHYycCRu+clAlvAzwUmda8nFhFMYFQZEVMcWOzlWfGdlTFEF8Zpa1d1RZmLFWKKLeMo9VffZYvEOMBjIFdnLKKZAaZb/UxA+Mkp2025EyJMl6it6m8nnLjuETDQ+JIq0358cqL6jcvQ9EBvAV8J/mxG6w8ZbHWGf6CZAn4XSMZtIdiP7PLeqROPJtPSwXaCZKlovQE5GQS/5AtN9t18Ovu727yBr0jjWJHCq3uepfiC3OezzHsw"
+`endif

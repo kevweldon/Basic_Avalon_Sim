@@ -4,8 +4,8 @@
  kind="my_sys_clock_in"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 23.3 104 (Future versions may contain additional information.) -->
- <!-- 2023.10.06.06:02:14 -->
+ <!-- Format version 23.4 79 (Future versions may contain additional information.) -->
+ <!-- 2024.01.30.12:42:59 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -36,7 +36,7 @@
  </parameter>
  <parameter name="AUTO_DEVICE">
   <type>java.lang.String</type>
-  <value>AGFB014R24A3E3VR0</value>
+  <value>AGFB014R24A3E3V</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -51,6 +51,15 @@
   <visible>false</visible>
   <valid>true</valid>
   <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_BOARD">
+  <type>java.lang.String</type>
+  <value>default</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>BOARD</sysinfo_type>
  </parameter>
  <parameter name="AUTO_IN_CLK_CLOCK_RATE">
   <type>java.lang.Long</type>
@@ -149,7 +158,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="in_clk" kind="clock_sink" version="23.3">
+  <interface name="in_clk" kind="clock_sink" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -210,7 +219,7 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="out_clk" kind="clock_source" version="23.3">
+  <interface name="out_clk" kind="clock_source" version="23.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -294,7 +303,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Input</displayName>
-  <version>23.3</version>
+  <version>23.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -302,8 +311,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
-  <version>23.3</version>
+  <version>23.4</version>
  </plugin>
- <reportVersion>23.3 104</reportVersion>
+ <reportVersion>23.4 79</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

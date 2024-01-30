@@ -1,4 +1,4 @@
-//Legal Notice: (C)2023 Altera Corporation. All rights reserved.  Your
+//Legal Notice: (C)2024 Altera Corporation. All rights reserved.  Your
 //use of Altera Corporation's design tools, logic functions and other
 //software and tools, and its AMPP partner logic functions, and any
 //output files any of the foregoing (including device programming or
@@ -18,7 +18,7 @@
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 13469 16735 16788 
 
-module my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1938_d7f2heq (
+module my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1938_vhkueba (
                                                                            // inputs:
                                                                             address,
                                                                             byteenable,

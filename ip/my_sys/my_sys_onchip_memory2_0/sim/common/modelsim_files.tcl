@@ -20,7 +20,7 @@ namespace eval my_sys_onchip_memory2_0 {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1938/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1938_d7f2heq.v"]\"  -work altera_avalon_onchip_memory2_1938"
+    lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../altera_avalon_onchip_memory2_1938/sim/my_sys_onchip_memory2_0_altera_avalon_onchip_memory2_1938_vhkueba.v"]\"  -work altera_avalon_onchip_memory2_1938"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/my_sys_onchip_memory2_0.v"]\"  -work my_sys_onchip_memory2_0"                                                                                             
     return $design_files
   }

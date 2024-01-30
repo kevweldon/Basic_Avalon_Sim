@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_reset_controller/altera_reset_controller.v#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_reset_controller/altera_reset_controller.v#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // --------------------------------------
 // Reset controller
@@ -318,3 +318,6 @@ module altera_reset_controller
     endgenerate
 
 endmodule
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "bfJJGqHwlkOIjUtfUmDE+3eVyIA1yD0axr/dj7ge4ZFITQ9CM1myKwKNIlVxszvFXuyMLvpA9xtBLLK7ngyCdyGN6C54eCPe93Ak1VLcGVgDgA4d2pRuDYg8WDVzx8BbZIFQhiXUO1FdYlZdi60I07W5PSSJMMr1aXj9VelcLI/KFjRjdquJ7S27k4+VpNQQiHjmOiAcN0nWqmUVc6wGR6CjLOHbNQMqOt2tD6CE1zgmCMNvZwGJwwg7wVZQ6oPpZTnK7V7kvBszIugznAu7oY7eI+w07SsPnEO8JRW1KaU7u5CVDSL1+pWBJPqO5n2+O8TTWgq6pys1RTD8JaLTgNYsUoCSQfRYdIqS1o/0BY4C5DWeaWaYQr1nxMcWlQjVlliZ7QxJug3PY32XvscDnt5k+pDz3qr5C0cLXNv355J8Uejhc04DFbaj7OUKtcCLtHJ/z9DLy1Qs2bPgF8UwpufNTcWWsrNeoygMQa4ZFTblj//3i9gs4a0tSxycjxDMt1406UGLGzWlTYmWlJvBLqjFKMZvcNc59VCLiSR8uQCcFqkp8C4tXZ5StW4VRBOAcRo69l9ejtJiCYApXjRkU1tphv9ch8A1A24iLpvpKU1Ss8E/YCOdbNyYgcSjXDJn6oZOpreHfWmGim0aSUuTRZT+9pI40BVSPDuzOH7G6cP+qGa01+dJGi2lZfHjcWLm7pcpLmjG/4VyKE48TLFxupAuda6qX0Bevi//vV6c2UvVsRf7LhMDY8FiqnX9Yh1/zQLZ/WKJ6r0g58FdC6lnXCQKeRZpZQNzBPcn2JDc9tdCxAfFa73oRR8Fi29QuhzRYaTRZsH5DexsyKtVpk7KPXwvkHGr36cEsNV3AtTKhVx6JVn6B4Xf8xZEMABt43Tb9C0PTds6RF0foQ3+VDRWP8EMnPrVw6ThhlWP/xzNVeagAA7k6OKKMZ+hCg+uJETpVQEjJjV+IEYzY9h3cIFdKYXubinZQO9+hNI2T7gHZh+PBl+mVeMN7GmpTlV2zyF5"
+`endif

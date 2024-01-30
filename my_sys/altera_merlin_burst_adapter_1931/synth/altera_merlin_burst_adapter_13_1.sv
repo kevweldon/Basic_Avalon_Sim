@@ -11,19 +11,6 @@
 // agreement for further details.
 
 
-// (C) 2001-2012 Altera Corporation. All rights reserved.
-// Your use of Altera Corporation's design tools, logic functions and other
-// software and tools, and its AMPP partner logic functions, and any output
-// files any of the foregoing (including device programming or simulation
-// files), and any associated documentation or information are expressly subject
-// to the terms and conditions of the Altera Program License Subscription
-// Agreement, Altera MegaCore Function License Agreement, or other applicable
-// license agreement, including, without limitation, that your use is for the
-// sole purpose of programming logic devices manufactured by Altera and sold by
-// Altera or its authorized distributors.  Please refer to the applicable
-// agreement for further details.
-
-
 // $Id: //acds/main/ip/merlin/altera_merlin_burst_adapter/altera_merlin_burst_adapter.sv#68 $
 // $Revision: #68 $
 // $Date: 2014/01/23 $
@@ -436,8 +423,12 @@ module altera_merlin_burst_adapter_13_1
   wire [63:0]                       log2_numsymbols     = log2ceil(NUM_SYMBOLS);
   wire [PKT_BURST_SIZE_W - 1 : 0]   encoded_numsymbols  = log2_numsymbols[PKT_BURST_SIZE_W-1:0];
   wire [SOP_EOP_W-1:0] nxt_sop_eop_chunks;
-  reg  [SOP_EOP_W-1:0] in_sop_eop_reg;  
-  reg  [SOP_EOP_W-1:0] d1_sop_eop_chunks;
+  wire [SOP_EOP_W-1:0]             in_sop_eop_chunks    = sink0_data[PKT_SOP_OOO:PKT_EOP_OOO]; 
+    //OOO milestone 6 SOP_EOP chunks
+    reg  [SOP_EOP_W-1:0]             sop_eop_chunks_reg;
+    reg                              sop_eop_chunk_enable;
+    reg  [SOP_EOP_W-1:0]             in_sop_eop_reg;  
+    reg  [SOP_EOP_W-1:0]             d1_sop_eop_chunks;
   // ---------------------------------------------------
   // INPUT STAGE SIGNALS CONDITIONING
   // ---------------------------------------------------
@@ -523,6 +514,7 @@ module altera_merlin_burst_adapter_13_1
   reg [PKT_BURSTWRAP_W - 1 : 0] out_burstwrap_reg;
   reg [PKT_BYTE_CNT_W - 1 : 0]  out_byte_cnt_reg;
   reg                           nxt_in_ready;
+  reg [1:0]                     out_sop_eop_reg;
 
   wire                           nxt_out_valid;
   wire                           nxt_out_sop;
@@ -623,8 +615,6 @@ generate if (PIPE_INPUTS == 0)
                 in_bytecount_reg_zero <= ~|in_bytecount;
                 in_uncompressed_read_reg  <= in_uncompressed_read;
                 in_eop_reg                <= in_eop;
-                if (ENABLE_OOO) 
-                in_sop_eop_reg        <= 2'b11;
                 if(in_sop)begin
                     if(ROLE_BASED_USER)
                       in_sai_reg       <= in_sai;
@@ -666,8 +656,7 @@ generate if (PIPE_INPUTS == 0)
                   in_bytecount_reg_zero    <= ~|in_bytecount;
                   in_uncompressed_read_reg <= in_uncompressed_read;
                   in_eop_reg                 <= in_eop;
-                  if (ENABLE_OOO) 
-                  in_sop_eop_reg           <= 2'b11;
+
                 if(ROLE_BASED_USER)
                     in_sai_reg       <= in_sai;
                     else 
@@ -704,7 +693,7 @@ generate if (PIPE_INPUTS == 0)
   assign d1_in_narrow            = in_narrow_reg;
   assign d1_in_passthru          = in_passthru_reg;
   if (ENABLE_OOO) 
-  assign d1_sop_eop_chunks       = in_sop_eop_reg;
+  assign d1_sop_eop_chunks       = sop_eop_chunks_reg;
   if(ROLE_BASED_USER)
   assign d1_in_sai               = in_sai_reg; 
 
@@ -775,8 +764,6 @@ else
                            in_compressed_read_reg   <= in_compressed_read;
                            in_uncompressed_read_reg <= in_uncompressed_read;
                            in_sop_reg               <= in_sop;
-                           if (ENABLE_OOO) 
-                           in_sop_eop_reg        <= 2'b11;
                            if(in_sop)begin
                               if(ROLE_BASED_USER)
                                  in_sai_reg       <= in_sai;
@@ -803,7 +790,7 @@ else
                            d1_in_narrow            <= in_narrow_reg;
                            d1_in_passthru          <= in_passthru_reg;
                            if (ENABLE_OOO) 
-                           d1_sop_eop_chunks       <= in_sop_eop_reg;
+                           d1_sop_eop_chunks       <= sop_eop_chunks_reg;
                            if(ROLE_BASED_USER)begin
                               d1_in_sai            <= in_sai_reg;
                            end
@@ -878,8 +865,6 @@ else
                            in_compressed_read_reg   <= in_compressed_read;
                            in_uncompressed_read_reg <= in_uncompressed_read;
                            in_sop_reg               <= in_sop;
-                           if (ENABLE_OOO) 
-                           in_sop_eop_reg        <= 2'b11;
                            if(in_sop && ROLE_BASED_USER)begin
                               in_sai_reg            <= in_sai;
                            end   
@@ -903,7 +888,7 @@ else
                            d1_in_narrow            <= in_narrow_reg;
                            d1_in_passthru          <= in_passthru_reg;
                            if (ENABLE_OOO) 
-                           d1_sop_eop_chunks       <= in_sop_eop_reg;
+                           d1_sop_eop_chunks       <= sop_eop_chunks_reg;
                            if(ROLE_BASED_USER)
                            d1_in_sai               <= in_sai_reg;
             end
@@ -1163,12 +1148,14 @@ endgenerate
             out_valid_reg   <= '0;
             out_sop_reg     <= '0;
            in_ready_hold    <= '0;
+           out_sop_eop_reg  <=  '0;
       end
       else begin
        if (~source0_valid | source0_ready) begin
             state           <= next_state;
             out_valid_reg   <= nxt_out_valid;
             out_sop_reg     <= nxt_out_sop;
+           out_sop_eop_reg  <=  nxt_sop_eop_chunks;
        end
            in_ready_hold <= 1'b1;
       end
@@ -1182,12 +1169,14 @@ endgenerate
             out_valid_reg   <= '0;
             out_sop_reg     <= '0;
            in_ready_hold    <= '0;
+           out_sop_eop_reg  <=  '0;
       end
       else begin
        if (~source0_valid | source0_ready) begin
             state           <= next_state;
             out_valid_reg   <= nxt_out_valid;
             out_sop_reg     <= nxt_out_sop;
+            out_sop_eop_reg  <=  nxt_sop_eop_chunks;
        end
            in_ready_hold <= 1'b1;
       end
@@ -1467,6 +1456,51 @@ endgenerate
       source0_data[PKT_SAI_H:PKT_SAI_L]                   = d1_in_sai;
   end
 
+
+    //OOO_support padding sop_eop at MSB of streaming packet to indicate whether split command or not
+generate
+ if(ENABLE_OOO == 1) begin 
+      if (PKT_BYTE_CNT_W != OUT_BYTE_CNT_W)begin  
+          always @(posedge clk) begin
+             if (sink0_ready && sink0_valid && sink0_startofpacket)begin          
+                if(in_bytecount > OUT_MAX_BYTE_CNT)begin
+                   sop_eop_chunks_reg   <= 2'b10;
+                   sop_eop_chunk_enable <= 1;
+                end
+                else begin
+                  sop_eop_chunks_reg <= 2'b11; // when width adapter splits  command but burst adapter doesnt. 
+                end  
+             end         
+             else if(sop_eop_chunk_enable)begin
+                if( sink0_ready && sink0_valid && sink0_endofpacket )begin
+                   sop_eop_chunks_reg   <=2'b01;
+                   sop_eop_chunk_enable <=0;
+                end               
+                else if (source0_ready) begin
+                   sop_eop_chunks_reg <= 2'b00;
+                end
+             end   
+             else if (source0_ready) begin
+                sop_eop_chunks_reg <= 2'b11;
+             end
+          end
+      end    
+      else begin 
+        always @(posedge clk) begin
+           if(sink0_ready && sink0_valid && sink0_startofpacket)begin
+                   sop_eop_chunks_reg <= 2'b10;
+           end else if (source0_ready) begin
+                   sop_eop_chunks_reg <= in_sop_eop_chunks;         
+           end
+        end 
+      end
+  end
+endgenerate 
+
+
 endmodule
 
 
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aIcdhc+wsbnBmH46maK06mD1LNMamOaSJFxXvrR6nyyk+uuqPLYyAKdV9ylkXaCP7M+CsqTLo0YqLprpcIcM0wve0voNn97x/L1eMT//nns9KUEqTRwbjpxdmdSsSbANPSMiZRM/vebKbv+0Wk+uc7n1rFwjwBnS6RR1htN7N8WQwif0tPxpmTfibBvVmU1P+NUHrMzzY7QjBWNJEQ2Mt5iEy5+K7ZWsDa0r1QZ8ojaqGmpDFKXDKQqtYAHnbGw6NnuGxgIqe3orPi4CehdQlAMI6F9jG8kvt9NjoP50L1pbe32YAYpXya6NV+XSryLQqRvlJG2SpCv1oQyQcjx3erCtJDsa1E8JlIq5rSYs63fxy8y3+k8jgY4xawdLX60CLRQSugjBfLkkqZfo4yvtzEwB0oUDAKkRdEjvTcsikKNyF4zLNq1P/3NshZc/oqI5U1amkwNnK6Et29OkvKROc1YS+GM0ZJ9FgfmzpSD2UGYW7bB+tWRIDsn5wuHrESxWBDXEYTHvBdji+fBZtf+Ee+NmO3oWFqxE89dItBQ7LF8Xg9vyoNzuDA4qDOZ6VHwNOvBaewKRytsz9jXuzibUl1/pbtKGFh5BHl26LmIriAP2XLS5ZKo1/4vwKAYRIJ2QcLskUhTxZuC3tnYVVa9JL3Uw6mycVPOAMALBGNAHbrW8e3PYFyimE6SJoqih1MR9Ne4R7p9ilp1wZT64TMmVUqouFagdjWlDon76FpO3CSnE5Fr2J/zgoL/TvntNTVbxsg6WPc3pfGG4MgL0fJu0/fR"
+`endif

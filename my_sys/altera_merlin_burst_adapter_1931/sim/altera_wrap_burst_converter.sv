@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_wrap_burst_converter.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_wrap_burst_converter.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // ------------------------------------------------------
 // This component is specially for Wrapping Avalon slave.
@@ -540,3 +540,6 @@ module altera_wrap_burst_converter
     endfunction
 
 endmodule
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aK8gCVgfmOHh7v3tjBuQc5ASINGTQmWQ1I6VC8B3lP7c1RohJ8I4VzDgRdLZz5XQ2XgCEiz2u+Jai4pF2j+GoUTEzy05AE59L8vQ1eXLGyPUMy/1b7nugiUzuqHEuK/XZetQLeT+iwlyNKS0B6pp/jsnzznBmw5Ia+Mt1K+7hXlhrwoE/YXnDkIgw9DmPuY9jhUehQlxfgH1Hz4Ls9X0zbtWFjhNeAgWPz64wQBIvQgOiTm4xcKymHvpHrTusYKgWqf8ZLvFmp1iRBruTD/mM34s5hkofM/VFhsIx9YBkAgtGTM+TFtnv8OnhYeOKbfm68wq36mxLdeVsAS+Zx7bfg0iDTBD9DhTUaD+Jv7kLo57XmTatCc9E8MydwerZRl9hHHcIv2OqCVX7IyA1jBXyPGJ83DTGgfBVSgTWNrveE07Yn1WDbvcMJfD5HablGvhUPQptfApzZua5kSGHSC6sGU2AfSsPFmw/mwLWmvpHrIFcOIhURyY6//hGQqYPs/79pHxixKHGVzC4u2QnwloO07NFSA8N07VO5/h5Q+eWqZr5vpQaUTznlOzoDMca2E7sxpZ87YoFh6Ysac+Fmu0gHGaTgUD5npib/q0FT1Ho9rirxXcQ2VegezoSwEr/fU3GU6BprTlQpsBmn0g4K5RZE6mxk39zputSImeWFHHVDx2LJC/CvwFGMEAn/m/DpENlDkHamNHO9BQ04WU6d7hDKtNS0OCyWQcDQ1emYTOSYYYOhWKzgg55ryLaZnSqDSQdrBtK2ay3ChyKwJf2Klr/6L"
+`endif

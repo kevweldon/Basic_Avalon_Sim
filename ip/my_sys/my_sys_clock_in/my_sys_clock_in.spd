@@ -7,5 +7,5 @@
    hasInlineConfiguration="true" />
  <topLevel name="my_sys_clock_in.my_sys_clock_in" />
  <deviceFamily name="agilex7" />
- <device name="AGFB014R24A3E3VR0" />
+ <device name="AGFB014R24A3E3V" />
 </simPackage>

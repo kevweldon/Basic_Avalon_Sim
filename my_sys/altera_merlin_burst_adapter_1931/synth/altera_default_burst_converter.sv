@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_default_burst_converter.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_default_burst_converter.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // --------------------------------------------
 // Default Burst Converter
@@ -273,3 +273,6 @@ module altera_default_burst_converter
      end // sync_rst3
      endgenerate
 endmodule
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aIVSU1Uqelvtx0LmzJW5+oMDcTOMv1XegNO3sessnrc09/WnjfSiXcMAWhIgf54Yn7fyk4qBWkqWtKsmpHEpMLZDtLGm+7jorlI2ibx0pam7PGRhE7Q12jXf2GDC9Oj9jD3vhfCPktyLbCawTn5xXgswJBWtanH8PY23uLhzQEnlEQsGPVAggqThNrjG8wrIiR5e1vyoicsUOZVlU3SqM9nh3OcIYj9+FGegvWxdJOljkKImC3e3SKDTi/AAtw4KEdWsuhnfRk5wmB7iqXbP8keLK8NYqoHj/eidwiw/0SR0iS2EMcxSOysqDck/yPsRkyOL6wUzhj7B3E53RBBIVUyw4b3kFGYXRl1+uGGr6tsIpO+mwSEfWjgXWseMNhrKRLmRHslDo3E0m0R0onYPIr+rtPvlzh5cwwU2/CQQjFs8Mh0DtUL8TFRU+tyWGZJAQ/swoafMm1cb2Ij8CnRiCv/AffTNt9Hj4gBcqZTTm0um6VhOYnREByXSaslCZBOBAZKbZPt82/Ymt18v/znA0CjRUXETrGdya7yy7hoSbqJFygQal/X6X4S8mgMOb81KMAHnQ1niThOvDmaPpLkICaHAVR183tsLBh4LHCfDlY7GpJI4gqnjcYYnWFmFVxjb6X72Ctd9yx0504ehpevnT7IOUvasVXGZRexbgLB6Gb4uAkGhDV3qsq6QO+ooQaeoiiQIM51pB+TarZpi9cu5dm2YNdW6Zm+tcJb+ebP2XLU2Nnt3SHCMVcFEOAvRi8FSbqwRD7v23RI0WO8Oq8J/Owz"
+`endif

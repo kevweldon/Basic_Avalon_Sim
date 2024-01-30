@@ -444,8 +444,10 @@ endgenerate
    // subburst1 addr=0, subburst2 addr=0, subburst3 addr=4, subburst4 addr=4
    generate
       if (BITS_TO_MASK > 0) begin : mask_address
-
-         assign m0_address = { cmd_addr[ADDR_W-1:BITS_TO_MASK], {BITS_TO_MASK{1'b0}} };
+         if(ADDR_W == BITS_TO_MASK)
+             assign m0_address = { cmd_addr[ADDR_W-1:BITS_TO_MASK-1], {BITS_TO_MASK-1{1'b0}} };
+         else
+             assign m0_address = { cmd_addr[ADDR_W-1:BITS_TO_MASK], {BITS_TO_MASK{1'b0}} };
 
       end else begin : no_mask_address
 

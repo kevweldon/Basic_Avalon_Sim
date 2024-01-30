@@ -1,5 +1,5 @@
 
-# (C) 2001-2023 Intel Corporation. All rights reserved.
+# (C) 2001-2024 Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions and 
 # other software and tools, and its AMPP partner logic functions, and 
 # any output files any of the foregoing (including device programming 
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 23.3 104 linux 2023.10.06.06:02:18
+# ACDS 23.4 79 linux 2024.01.30.12:43:05
 
 # ----------------------------------------
 # Initialize variables
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_4/acds/23.3/104/linux64/quartus/"
+  set QUARTUS_INSTALL_DIR "/nfs/site/disks/swbld_archive_4/acds/23.4/79/linux64/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -202,7 +202,7 @@ alias file_copy {
 # ----------------------------------------
 # Create compilation libraries
 
-set logical_libraries [list "work" "work_lib" "lpm_ver" "sgate_ver" "altera_ver" "altera_mf_ver" "altera_lnsim_ver" "tennm_ver" "tennm_hssi_ver" "tennm_hssi_e0_ver" "tennm_hssi_p0_ver"]
+set logical_libraries [list "work" "work_lib" "lpm_ver" "sgate_ver" "altera_ver" "altera_mf_ver" "altera_lnsim_ver" "tennm_ver" "tennm_hssi_ver" "tennm_hssi_e0_ver" "tennm_hssi_p0_ver" "tennm_agilex7_io96_ver"]
 
 proc ensure_lib { lib } { if ![file isdirectory $lib] { vlib $lib } }
 ensure_lib          ./libraries/     
@@ -227,24 +227,26 @@ if { [llength $dpi_libraries] != 0 } {
 }
 
 if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
-  ensure_lib                   ./libraries/lpm_ver/          
-  vmap       lpm_ver           ./libraries/lpm_ver/          
-  ensure_lib                   ./libraries/sgate_ver/        
-  vmap       sgate_ver         ./libraries/sgate_ver/        
-  ensure_lib                   ./libraries/altera_ver/       
-  vmap       altera_ver        ./libraries/altera_ver/       
-  ensure_lib                   ./libraries/altera_mf_ver/    
-  vmap       altera_mf_ver     ./libraries/altera_mf_ver/    
-  ensure_lib                   ./libraries/altera_lnsim_ver/ 
-  vmap       altera_lnsim_ver  ./libraries/altera_lnsim_ver/ 
-  ensure_lib                   ./libraries/tennm_ver/        
-  vmap       tennm_ver         ./libraries/tennm_ver/        
-  ensure_lib                   ./libraries/tennm_hssi_ver/   
-  vmap       tennm_hssi_ver    ./libraries/tennm_hssi_ver/   
-  ensure_lib                   ./libraries/tennm_hssi_e0_ver/
-  vmap       tennm_hssi_e0_ver ./libraries/tennm_hssi_e0_ver/
-  ensure_lib                   ./libraries/tennm_hssi_p0_ver/
-  vmap       tennm_hssi_p0_ver ./libraries/tennm_hssi_p0_ver/
+  ensure_lib                        ./libraries/lpm_ver/               
+  vmap       lpm_ver                ./libraries/lpm_ver/               
+  ensure_lib                        ./libraries/sgate_ver/             
+  vmap       sgate_ver              ./libraries/sgate_ver/             
+  ensure_lib                        ./libraries/altera_ver/            
+  vmap       altera_ver             ./libraries/altera_ver/            
+  ensure_lib                        ./libraries/altera_mf_ver/         
+  vmap       altera_mf_ver          ./libraries/altera_mf_ver/         
+  ensure_lib                        ./libraries/altera_lnsim_ver/      
+  vmap       altera_lnsim_ver       ./libraries/altera_lnsim_ver/      
+  ensure_lib                        ./libraries/tennm_ver/             
+  vmap       tennm_ver              ./libraries/tennm_ver/             
+  ensure_lib                        ./libraries/tennm_hssi_ver/        
+  vmap       tennm_hssi_ver         ./libraries/tennm_hssi_ver/        
+  ensure_lib                        ./libraries/tennm_hssi_e0_ver/     
+  vmap       tennm_hssi_e0_ver      ./libraries/tennm_hssi_e0_ver/     
+  ensure_lib                        ./libraries/tennm_hssi_p0_ver/     
+  vmap       tennm_hssi_p0_ver      ./libraries/tennm_hssi_p0_ver/     
+  ensure_lib                        ./libraries/tennm_agilex7_io96_ver/
+  vmap       tennm_agilex7_io96_ver ./libraries/tennm_agilex7_io96_ver/
 }
 set design_libraries [dict create]
 set design_libraries [dict merge $design_libraries [my_sys_onchip_memory2_0::get_design_libraries]]
@@ -262,19 +264,21 @@ alias dev_com {
     echo "\[exec\] dev_com"
   }
   if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                 "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.v"                           -work lpm_ver          
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                 "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v"                              -work sgate_ver        
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v"                  -work altera_ver       
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                 "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v"                          -work altera_mf_ver    
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                      -work altera_lnsim_ver 
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_atoms.sv"                       -work tennm_ver        
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/tennm_atoms_ncrypt.sv"         -work tennm_ver        
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/fmica_atoms_ncrypt.sv"                -work tennm_ver        
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms.sv"                  -work tennm_hssi_ver   
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms_ncrypt.sv"           -work tennm_hssi_ver   
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/cr3v0_serdes_models_ncrypt.sv" -work tennm_hssi_e0_ver
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctp_hssi_atoms.sv"                    -work tennm_hssi_p0_ver
-    eval  vlog -sv -permissive $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctp_hssi_atoms_ncrypt.sv"             -work tennm_hssi_p0_ver
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                          "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.v"                           -work lpm_ver               
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                          "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v"                              -work sgate_ver             
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                          "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v"                  -work altera_ver            
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                          "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v"                          -work altera_mf_ver         
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                      -work altera_lnsim_ver      
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_atoms.sv"                       -work tennm_ver             
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/tennm_atoms_ncrypt.sv"         -work tennm_ver             
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/fmica_atoms_ncrypt.sv"                -work tennm_ver             
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms.sv"                  -work tennm_hssi_ver        
+    eval  vlog -sv -suppress 13314,2583 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/tennm_hssi_atoms_ncrypt.sv"           -work tennm_hssi_ver        
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/cr3v0_serdes_models_ncrypt.sv" -work tennm_hssi_e0_ver     
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctp_hssi_atoms.sv"                    -work tennm_hssi_p0_ver     
+    eval  vlog -sv -permissive $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS          "$QUARTUS_INSTALL_DIR/eda/sim_lib/ctp_hssi_atoms_ncrypt.sv"             -work tennm_hssi_p0_ver     
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/../devices/sim_lib/tennm_agilex7_io96.sv"         -work tennm_agilex7_io96_ver
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS                      "$QUARTUS_INSTALL_DIR/../devices/sim_lib/tennm_agilex7_io96_ncrypt.sv"  -work tennm_agilex7_io96_ver
   }
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/simsf_dpi.cpp"
 }

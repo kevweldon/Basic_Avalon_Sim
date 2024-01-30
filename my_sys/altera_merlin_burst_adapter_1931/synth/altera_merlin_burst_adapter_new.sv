@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_merlin_burst_adapter_new.sv#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_burst_adapter/new_source/altera_merlin_burst_adapter_new.sv#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 `timescale 1 ns / 1 ns
 
@@ -127,7 +127,8 @@ module altera_merlin_burst_adapter_new
     PKT_BURSTWRAP_W       = PKT_BURSTWRAP_H - PKT_BURSTWRAP_L + 1,
     PKT_BURST_SIZE_W      = PKT_BURST_SIZE_H - PKT_BURST_SIZE_L + 1,
     PKT_BURST_TYPE_W      = PKT_BURST_TYPE_H - PKT_BURST_TYPE_L + 1,
-    SOP_EOP_W             = PKT_SOP_OOO - PKT_EOP_OOO + 1;     
+    SOP_EOP_W             = PKT_SOP_OOO - PKT_EOP_OOO + 1,
+    OUT_MAX_BYTE_CNT        = 1 << (OUT_BYTE_CNT_W - 1);  
 
     localparam
     NUM_SYMBOLS           = PKT_BYTEEN_H - PKT_BYTEEN_L + 1,
@@ -246,9 +247,13 @@ module altera_merlin_burst_adapter_new
     wire [PKT_BYTEEN_W     - 1 : 0]  in_byteen            = sink0_pipe_data[PKT_BYTEEN_H : PKT_BYTEEN_L];
     wire                             in_passthru          = in_burstcount <= 16;
     wire [PKT_SAI_W-1:0]             in_sai               = sink0_pipe_data[PKT_SAI_H:PKT_SAI_L];
+    wire [SOP_EOP_W-1:0]             in_sop_eop_chunks    = sink0_data[PKT_SOP_OOO:PKT_EOP_OOO]; 
+
+    //OOO milestone 6 SOP_EOP chunks
+    reg  [SOP_EOP_W-1:0]             sop_eop_chunks_reg;
+    reg                              sop_eop_chunk_enable;    
       
     wire [SOP_EOP_W-1:0] nxt_sop_eop_chunks;
-    reg  [SOP_EOP_W-1:0] in_sop_eop_reg;
     reg  [SOP_EOP_W-1:0] d1_sop_eop_chunks;
 
     wire                             in_valid;
@@ -481,7 +486,6 @@ module altera_merlin_burst_adapter_new
                     in_passthru_reg          <= '0;
                     in_narrow_reg            <= '0;
                     in_sai_reg               <= '0;
-                    in_sop_eop_reg        <= '0;
                 end else begin
                     if (sink0_pipe_valid & sink0_pipe_ready) begin
                         in_eop_reg               <= in_eop;
@@ -489,8 +493,6 @@ module altera_merlin_burst_adapter_new
                         in_uncompressed_read_reg <= in_uncompressed_read;
                         in_write_reg             <= in_write;
                         in_narrow_reg            <= in_narrow;
-                        if (ENABLE_OOO) 
-                          in_sop_eop_reg        <= 2'b11;
                         if(in_sop)begin
                             if(ROLE_BASED_USER)
                             in_sai_reg           <= in_sai;
@@ -517,7 +519,6 @@ module altera_merlin_burst_adapter_new
                     in_passthru_reg          <= '0;
                     in_narrow_reg            <= '0;
                     in_sai_reg               <= '0;
-                    in_sop_eop_reg        <= '0;
                 end else begin
                     if (sink0_pipe_valid & sink0_pipe_ready) begin
                         in_eop_reg               <= in_eop;
@@ -525,8 +526,6 @@ module altera_merlin_burst_adapter_new
                         in_uncompressed_read_reg <= in_uncompressed_read;
                         in_write_reg             <= in_write;
                         in_narrow_reg            <= in_narrow;
-                        if (ENABLE_OOO) 
-                           in_sop_eop_reg        <= 2'b11;
                         if(in_sop)begin 
                            if(ROLE_BASED_USER)
                            in_sai_reg           <= in_sai;
@@ -569,7 +568,7 @@ module altera_merlin_burst_adapter_new
                 d1_in_byteen             = in_byteen_reg;
                 d1_in_narrow             = in_narrow_reg;
                 if (ENABLE_OOO) 
-                   d1_sop_eop_chunks     = in_sop_eop_reg;
+                   d1_sop_eop_chunks        = sop_eop_chunks_reg; 
                 if (ROLE_BASED_USER) begin
                 d1_in_sai                = in_sai_reg;
                 end
@@ -596,8 +595,6 @@ module altera_merlin_burst_adapter_new
                    in_addr_reg              <= in_addr;
                    in_aligned_addr_reg      <= in_aligned_addr;
                    in_len_reg               <= in_len;
-                   if (ENABLE_OOO) 
-                     in_sop_eop_reg      <= 2'b11;
                    if(in_sop && ROLE_BASED_USER)begin
                       in_sai_reg            <= in_sai;
                    end   
@@ -616,7 +613,7 @@ module altera_merlin_burst_adapter_new
                    d1_in_byteen            <= in_byteen_reg;
                    d1_in_aligned_addr      <= in_aligned_addr_reg;
                    if (ENABLE_OOO) 
-                     d1_sop_eop_chunks       <= in_sop_eop_reg;
+                     d1_sop_eop_chunks       <= sop_eop_chunks_reg;
                    if(ROLE_BASED_USER)
                    d1_in_sai               <= in_sai_reg;
                end // if (((state != ST_COMP_TRANS) & (~source0_valid | source0_ready)) |...
@@ -647,8 +644,6 @@ module altera_merlin_burst_adapter_new
                            in_uncompressed_read_reg <= in_uncompressed_read;
                            in_write_reg             <= in_write;
                            in_narrow_reg            <= in_narrow;
-                           if (ENABLE_OOO) 
-                             in_sop_eop_reg        <= 2'b11;
                        end
                        // length changes during packets, so sample
                        // length-dependent signals at the start
@@ -665,7 +660,7 @@ module altera_merlin_burst_adapter_new
                            d1_in_narrow            <= in_narrow_reg;
                            d1_in_uncompressed_read <= in_uncompressed_read_reg;
                            if (ENABLE_OOO) 
-                             d1_sop_eop_chunks       <= in_sop_eop_reg;
+                             d1_sop_eop_chunks       <= sop_eop_chunks_reg;
                        end // if (((state != ST_COMP_TRANS) & (~source0_valid | source0_ready)) |...
                    end // else: !if(reset)
                end // always_ff @
@@ -695,8 +690,6 @@ module altera_merlin_burst_adapter_new
                            in_uncompressed_read_reg <= in_uncompressed_read;
                            in_write_reg             <= in_write;
                            in_narrow_reg            <= in_narrow;
-                           if (ENABLE_OOO) 
-                             in_sop_eop_reg      <= 2'b11;
                        end
                        // length changes during packets, so sample
                        // length-dependent signals at the start
@@ -713,7 +706,7 @@ module altera_merlin_burst_adapter_new
                            d1_in_narrow            <= in_narrow_reg;
                            d1_in_uncompressed_read <= in_uncompressed_read_reg;
                            if (ENABLE_OOO) 
-                             d1_sop_eop_chunks       <= in_sop_eop_reg;
+                             d1_sop_eop_chunks       <= sop_eop_chunks_reg;
                        end // if (((state != ST_COMP_TRANS) & (~source0_valid | source0_ready)) |...
                    end // else: !if(reset)
                end // always_ff @
@@ -2219,5 +2212,50 @@ module altera_merlin_burst_adapter_new
         end
     endfunction
 
+    //OOO_support padding sop_eop at MSB of streaming packet to indicate whether split command or not
+generate
+ if(ENABLE_OOO == 1) begin 
+      if (PKT_BYTE_CNT_W != OUT_BYTE_CNT_W)begin  
+          always @(posedge clk) begin
+             if (sink0_ready && sink0_valid && sink0_startofpacket)begin          
+                if(in_bytecount > OUT_MAX_BYTE_CNT)begin
+                   sop_eop_chunks_reg   <= 2'b10;
+                   sop_eop_chunk_enable <= 1;
+                end
+                else begin
+                  sop_eop_chunks_reg <= 2'b11;  // when width adapter splits  command but burst adapter doesnt. 
+                end  
+             end         
+             else if(sop_eop_chunk_enable)begin
+                if( sink0_ready && sink0_valid && sink0_endofpacket )begin
+                   sop_eop_chunks_reg   <=2'b01;
+                   sop_eop_chunk_enable <=0;
+                end               
+                else if (source0_ready) begin
+                   sop_eop_chunks_reg <= 2'b00;
+                end
+             end   
+             else if (source0_ready) begin
+                sop_eop_chunks_reg <= 2'b11;
+             end
+          end
+      end    
+      else begin 
+        always @(posedge clk) begin
+           if(sink0_ready && sink0_valid && sink0_startofpacket)begin
+                   sop_eop_chunks_reg <= 2'b10;
+           end else if (source0_ready) begin
+                   sop_eop_chunks_reg <= in_sop_eop_chunks;         
+           end
+        end 
+      end
+  end
+endgenerate 
+
+
+
 endmodule
 
+`ifdef QUESTA_INTEL_OEM
+`pragma questa_oem_00 "Oy3QR2mKNgmhEfGL3SW6HQfCmb79srhD44IOaAtUlH8/pTgcm9t2UrXActBjPTmN4Bv4NNlGdb4P/mc3rtoPRgAFqt2AVMJX3s0AQGiv7LFugS4Idf0kbtvb54pTXH+zn++Y2B/CghSRss/8348bn4PK6K78kVges9jyNixGVIibFRB8G5IWj5cfOPmgt+ydiX4ZjY+CtMVd406Jcd+oQRODgD4T+W1CBwJueCo1/aL11ujbB+EdiVJsoHM2GcFcphDsHlGOyqq6c1OIPDHpWLR+yN8+tlwWDMfjlXqT747YSPxFyw5Izm6CibPHXUM2YoGUP74mgiS5WI3knYhdAb7Imuaf060o7Xesqix+iZ65W8VLiUAl6r9qgQQreuaH3oK2rDnwrvULzVIIs7tJoHZxd42NG91hkYW+7U+o8/ahU5GJWr4fWFEKi9/D86OnSeSD36eRIBklACbNXiLL672yguu59TbUci6S/uou8bDr1tt5Sqjwx2txLITED+c4M98GH30nsHHnE+a28/65C4qdVrK+DBYp3WRwt9o31how/UmBl29CaFbdxfqQoAZ/qi0nvH1s604WLvByGrNIBkuD2OTd9c5nSEapn0b8APv4bAgfudfqi9Q8UDDXog4IOf7d4ZMWoo63ceXPVo9rsSObIwNN8ReDPbexZqxM5/iW6CMAYzzuLPw28rHHqIYXG4itZKXilYNePY1I/251lpT/TEnx0OoVZSDEzEurXYxj7kBU6STwLpsYhko0DSuF5X3viK1oOHYeERYPotv6Cf+iWY0Cf5GMSV4HLeNfN7/LhBP72+uxbD1rhTt5jWeZkEoJj9x9Baixrep9e1iLSy2BQdWFkUZbb3lQ+703IoGwN81Vw54AAb2cnK8gC1vKZcrYMJSEFVEdi/MyDMACTtqBN/W0I530VOhmRSTkf3JST0h72S+fp+RGnEvmPq1WVmez0VbyDjkfatC8z4BkooBYAc2RGEPFXozxp9slpR5oDGtolQvB26uNljYfLRX3"
+`endif

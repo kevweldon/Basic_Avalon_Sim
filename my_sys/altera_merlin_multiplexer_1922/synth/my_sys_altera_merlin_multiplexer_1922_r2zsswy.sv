@@ -24,9 +24,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/23.3/ip/iconnect/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
+// $Id: //acds/rel/23.4/ip/iconnect/merlin/altera_merlin_multiplexer/altera_merlin_multiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2023/08/03 $
+// $Date: 2023/10/12 $
 
 // ------------------------------------------
 // Merlin Multiplexer
@@ -39,17 +39,17 @@
 
 // ------------------------------------------
 // Generation parameters:
-//   output_name:         my_sys_altera_merlin_multiplexer_1922_oxmecli
+//   output_name:         my_sys_altera_merlin_multiplexer_1922_r2zsswy
 //   NUM_INPUTS:          1
 //   ARBITRATION_SHARES:  1
-//   ARBITRATION_SCHEME   "no-arb"
-//   PIPELINE_ARB:        0
+//   ARBITRATION_SCHEME   "round-robin"
+//   PIPELINE_ARB:        1
 //   PKT_TRANS_LOCK:      72 (arbitration locking enabled)
 //   ST_DATA_W:           140
 //   ST_CHANNEL_W:        1
 // ------------------------------------------
 
-module my_sys_altera_merlin_multiplexer_1922_oxmecli
+module my_sys_altera_merlin_multiplexer_1922_r2zsswy
 (
     // ----------------------
     // Sinks
@@ -81,7 +81,7 @@ module my_sys_altera_merlin_multiplexer_1922_oxmecli
     localparam PAYLOAD_W        = 140 + 1 + 2;
     localparam NUM_INPUTS       = 1;
     localparam SHARE_COUNTER_W  = 1;
-    localparam PIPELINE_ARB     = 0;
+    localparam PIPELINE_ARB     = 1;
     localparam ST_DATA_W        = 140;
     localparam ST_CHANNEL_W     = 1;
     localparam PKT_TRANS_LOCK   = 72;
