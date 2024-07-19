@@ -8,7 +8,6 @@ set OPEN_MODELSIM 1
 
 set PROJECT my_sys
 set REVISION my_sys
-set SIMULATION_DIRECTORY simulation
 set SIM_SCRIPTS ./sim_scripts
 
 set OS [lindex $tcl_platform(os) 0]
